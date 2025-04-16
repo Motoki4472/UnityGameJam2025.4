@@ -28,19 +28,22 @@ namespace App.Scripts.Game.Data
 
         private List<string> Accessory = new List<string>
         {
-            "なし",
+            "アクセサリーなし",
             "メガネ",
             "ピアス",
             "ネックレス"
         };
 
-        public List<string> GetAppearance(int HairType, int EyeType, int MouthType, int AccessoryType)
+        public List<(string, int)> GetAppearance()
         {
-            List<string> appearance = new List<string>();
-            appearance.Add(Hair[HairType]);
-            appearance.Add(Eye[EyeType]);
-            appearance.Add(Mouth[MouthType]);
-            appearance.Add(Accessory[AccessoryType]);
+            System.Random random = new System.Random();
+            List<(string, int)> appearance = new List<(string, int)>
+            {
+                (Hair[random.Next(Hair.Count)], random.Next(Hair.Count)),
+                (Eye[random.Next(Eye.Count)], random.Next(Eye.Count)),
+                (Mouth[random.Next(Mouth.Count)], random.Next(Mouth.Count)),
+                (Accessory[random.Next(Accessory.Count)], random.Next(Accessory.Count))
+            };
             return appearance;
         }
     }
