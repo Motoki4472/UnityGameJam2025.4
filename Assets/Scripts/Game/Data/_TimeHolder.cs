@@ -6,9 +6,12 @@ namespace App.Scripts.Game.Data
     {
         private float LimitTime = 0f;
 
-        public _LimitTimeHolder(float limitTime)
+        private float LimitTimeMax = 0f;
+
+        public void SetLimitTime(float time)
         {
-            LimitTime = limitTime;
+            LimitTime = time;
+            LimitTimeMax = time;
         }
 
         public float GetLimitTime()

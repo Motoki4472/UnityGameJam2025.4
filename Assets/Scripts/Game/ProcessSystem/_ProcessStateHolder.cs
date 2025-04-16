@@ -2,7 +2,7 @@ using UnityEngine;
 
 namespace App.Game.ProcessSystem
 {
-    public class ProcessStateHolder
+    public class _ProcessStateHolder
     {
         private enum ProcessState
         {
