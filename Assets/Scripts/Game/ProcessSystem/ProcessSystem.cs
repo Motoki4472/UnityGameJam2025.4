@@ -32,7 +32,7 @@ namespace App.Game.ProcessSystem
             elapsedTime += Time.deltaTime;
             if (elapsedTime >= interval)
             {
-                elapsedTime = 0f;
+                elapsedTime -= interval;
                 if (ProcessStateHolder.IsWaiting)
                 {
                 }
