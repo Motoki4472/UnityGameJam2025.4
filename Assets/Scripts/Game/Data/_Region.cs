@@ -29,6 +29,11 @@ namespace App.Scripts.Game.Data
             }
         }
 
+        public List<string> GetRegions()
+        {
+            return new List<string>(regionToPrefectures.Keys);
+        }
+
 
     }
 }
