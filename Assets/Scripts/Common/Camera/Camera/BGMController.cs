@@ -42,11 +42,6 @@ namespace App.Common.Camera
 
         private static void InitializeAudioSource(AudioSource audioSource)
         {
-            if (audioSource == null)
-            {
-                Debug.LogError("AudioSourceがnullです。");
-                return;
-            }
             if (audioSource.clip == null)
             {
                 Debug.LogError("AudioClipがnullです。");
