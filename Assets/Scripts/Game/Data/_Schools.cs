@@ -61,6 +61,39 @@ namespace App.Scripts.Game.Data
             }
         }
 
+        public List<string> GetMistake(int type)
+        {
+            switch (type)
+            {
+                case 0: // 大卒
+                    List<string> mistakeSchoolsForUniversity = new List<string>();
+                    mistakeSchoolsForUniversity.AddRange(HighSchool);
+                    mistakeSchoolsForUniversity.AddRange(VocationalCollege);
+                    return mistakeSchoolsForUniversity;
+                case 1: // 短大・専門卒
+                    List<string> mistakeSchoolsForVocational = new List<string>();
+                    mistakeSchoolsForVocational.AddRange(Universities);
+                    mistakeSchoolsForVocational.AddRange(HighSchool);
+                    return mistakeSchoolsForVocational;
+                case 2: // 高卒
+                    List<string> mistakeSchoolsForHighSchool = new List<string>();
+                    mistakeSchoolsForHighSchool.AddRange(Universities);
+                    mistakeSchoolsForHighSchool.AddRange(VocationalCollege);
+                    return mistakeSchoolsForHighSchool;
+                case 3: // 短大・専門卒以上
+                    return HighSchool;
+                case 4: // 気にしない
+                    List<string> allMistakeSchools = new List<string>();
+                    allMistakeSchools.AddRange(Universities);
+                    allMistakeSchools.AddRange(VocationalCollege);
+                    allMistakeSchools.AddRange(HighSchool);
+                    return allMistakeSchools;
+                default:
+                    Debug.LogError("Invalid type provided. Returning empty list.");
+                    return new List<string>();
+            }
+        }
+
         public int GetSchoolType(string type)
         {
             if (schoolTypes.ContainsKey(type))

@@ -16,6 +16,10 @@ namespace App.Scripts.Game.Profile
         private string _mbti;
         private string _region;
 
+        private bool _isCorrect;
+        private bool _isPhotoEffect;
+        private bool _isBackgroundFraud;
+
         public _ProfileParameter(int[] imageId,string name,string gender,string birthdate,string age,string background,string zodiac,string mbti,string region)
         {
             this._imageId = imageId;
@@ -27,6 +31,9 @@ namespace App.Scripts.Game.Profile
             this._zodiac = zodiac;
             this._mbti = mbti;
             this._region = region;
+            this._isCorrect = true;
+            this._isPhotoEffect = false;
+            this._isBackgroundFraud = false;
         }
 
         public int[] GetImageId()
@@ -53,7 +60,7 @@ namespace App.Scripts.Game.Profile
         {
             return _background;
         }
-        public string Getzodiac()
+        public string GetZodiac()
         {
             return _zodiac;
         }
@@ -64,6 +71,26 @@ namespace App.Scripts.Game.Profile
         public string GetRegion()
         {
             return _region;
+        }
+        public void SetIsCorrect(bool isCorrect)
+        {
+            this._isCorrect = isCorrect;
+        }
+        public bool GetIsCorrect()
+        {
+            return _isCorrect;
+        }
+        public void SetIsPhotoEffect(bool isPhotoEffect)
+        {
+            this._isPhotoEffect = isPhotoEffect;
+        }
+        public bool GetIsPhotoEffect()
+        {
+            return _isPhotoEffect;
+        }
+        public void SetIsBackgroundFraud(bool isBackgroundFraud)
+        {
+            this._isBackgroundFraud = isBackgroundFraud;
         }
 
     }
