@@ -1,6 +1,7 @@
 using UnityEngine;
-using App.Game.ProcessSystem;
 using App.Scripts.Game.Data;
+using App.Game.ProcessSystem;
+using App.Common.Camera;
 
 namespace App.Game.ProcessSystem
 {
@@ -19,6 +20,7 @@ namespace App.Game.ProcessSystem
         {
             LimitTimeHolder.SetLimitTime(LimitTime);
             ActiveUserHolder.SetInitialActiveUser(InitialActiveUser);
+            BGMController.PlayGameBGM();
             ProcessStateHolder.StartAnimationStarting();
         }
 
