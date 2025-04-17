@@ -1,17 +1,17 @@
 using UnityEngine;
 using App.Scripts.Game.Data;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace App.Scripts.Game.Demand
 {
     public class _GenerateDemand
     {
-        
+
 
         public _DemandParameter GenerateDemandParameter(int demandNumber)
         {
             int _demandNumber = demandNumber;
-            // demandNumberの数だけ「気にしない」に置き換える
             List<string> parameters = new List<string> { GenerateAppearance(), GenerateAge(), GenerateBackground(), GenerateGender(), GenerateMBTI(), GenerateRegion() };
             System.Random random = new System.Random();
             HashSet<int> replacedIndices = new HashSet<int>();
@@ -28,14 +28,12 @@ namespace App.Scripts.Game.Demand
                 parameters[index] = "気にしない"; // 選択されたパラメータを「気にしない」に置き換える
             }
 
-            
-            Debug.Log($"Demand Number: {_demandNumber}");
-            Debug.Log($"Appearance: {parameters[0]}");
-            Debug.Log($"Age: {parameters[1]}");
-            Debug.Log($"Background: {parameters[2]}");
-            Debug.Log($"gender: {parameters[3]}");
+            Debug.Log($"外見: {parameters[0]}");
+            Debug.Log($"年齢: {parameters[1]}");
+            Debug.Log($"背景: {parameters[2]}");
+            Debug.Log($"性別: {parameters[3]}");
             Debug.Log($"MBTI: {parameters[4]}");
-            Debug.Log($"Region: {parameters[5]}");
+            Debug.Log($"地域: {parameters[5]}");
             
 
             return new _DemandParameter(parameters[0], parameters[1], parameters[2], parameters[3], parameters[4], parameters[5]);
@@ -66,6 +64,7 @@ namespace App.Scripts.Game.Demand
                     appearanceString += ", ";
                 }
             }
+
 
             return appearanceString;
         }

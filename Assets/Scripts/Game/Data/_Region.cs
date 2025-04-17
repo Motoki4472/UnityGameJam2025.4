@@ -22,6 +22,15 @@ namespace App.Scripts.Game.Data
             {
                 return regionToPrefectures[region];
             }
+            else if (region == "気にしない")
+            {
+                List<string> allPrefectures = new List<string>();
+                foreach (var prefectures in regionToPrefectures.Values)
+                {
+                    allPrefectures.AddRange(prefectures);
+                }
+                return allPrefectures;
+            }
             else
             {
                 Debug.LogError("Invalid region provided. Returning empty list.");
