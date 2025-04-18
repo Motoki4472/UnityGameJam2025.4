@@ -18,13 +18,25 @@ namespace App.Common.Camera
         public void Awake()
         {
             InitializeAudioMixer(audioMixer);
+            InitializeVolumeSliders();
+            
+        }
+        private void InitializeVolumeSliders()
+        {
             masterSlider.value = masterVolume;
             bgmSlider.value = bgmVolume;
             seSlider.value = seVolume;
+            masterSlider.minValue = -80f;
+            masterSlider.maxValue = 20f;
+            bgmSlider.minValue = -80f;
+            bgmSlider.maxValue = 20f;
+            seSlider.minValue = -80f;
+            seSlider.maxValue = 20f;
             masterSlider.onValueChanged.AddListener(SetMasterVolume);
             bgmSlider.onValueChanged.AddListener(SetBGMVolume);
             seSlider.onValueChanged.AddListener(SetSEVolume);
         }
+
         private static void InitializeAudioMixer(AudioMixer mixer)
         {
             PlayerPrefsSystem.LoadVolumeSetting(out float master_value, out float bgm_value, out float se_value);
