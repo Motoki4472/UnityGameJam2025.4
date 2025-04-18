@@ -5,6 +5,7 @@ namespace App.Scripts.Game.Data
     public class _ActiveUserHolder
     {
         private int ActiveUser = 0;
+        private int PeakActiveUser = 0;
         private int magnification_value = 0;
 
         public void SetInitialActiveUser(int initialActiveUser)
@@ -14,6 +15,10 @@ namespace App.Scripts.Game.Data
         public int GetActiveUser()
         {
             return ActiveUser;
+        }
+        public int GetPeakActiveUser()
+        {
+            return PeakActiveUser;
         }
         public void AddMagnificationValue()
         {
@@ -26,10 +31,8 @@ namespace App.Scripts.Game.Data
         public void CalculateActiveUser(int default_change_value, int amplification_value)
         {
             ActiveUser += default_change_value * (1 + amplification_value * (-magnification_value));
-            if (ActiveUser < 0)
-            {
-                ActiveUser = 0;
-            }
+            if (ActiveUser > PeakActiveUser) PeakActiveUser = ActiveUser;
+            if (ActiveUser < 0) ActiveUser = 0;
         }
     }
 }
