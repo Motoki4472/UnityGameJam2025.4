@@ -1,6 +1,6 @@
 using UnityEngine;
-
 using App.Scripts.Game.Profile;
+using App.Scripts.Game.Documents;
 
 namespace App.Scripts.Game.Demand
 {
@@ -8,6 +8,7 @@ namespace App.Scripts.Game.Demand
     {
         private _GenerateDemand _generateDemand;
         private _GenerateProfile _generateProfile;
+        private _SurveyList _surveyList;
         private _GenerateMistakeProfile _generateMistakeProfile;
         private _ProfileParameter[] ProfileParameter = new _ProfileParameter[3];
 
@@ -16,6 +17,7 @@ namespace App.Scripts.Game.Demand
             _generateDemand = new _GenerateDemand();
             _generateProfile = new _GenerateProfile();
             _generateMistakeProfile = new _GenerateMistakeProfile();
+            _surveyList = new _SurveyList();
 
             _DemandParameter demandParameter = _generateDemand.GenerateDemandParameter(0);
             
@@ -25,7 +27,9 @@ namespace App.Scripts.Game.Demand
                 if(i != 0)
                 {
                     ProfileParameter[i] = _generateMistakeProfile.GenerateMistakeProfileParameter(demandParameter,ProfileParameter[i]);
+                    
                 }
+                _surveyList.GenerateStudentList(ProfileParameter[i]);
             }
             
             

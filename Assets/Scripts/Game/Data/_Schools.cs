@@ -119,5 +119,26 @@ namespace App.Scripts.Game.Data
             Debug.LogError("Invalid type provided. Returning default value.");
             return "Unknown";
         }
+
+        public int GetGraduationYears(string schoolName)
+        {
+            if (Universities.Contains(schoolName))
+            {
+                return 4; // 大学は4年
+            }
+            else if (VocationalCollege.Contains(schoolName))
+            {
+                return 2; // 短大・専門学校は2年
+            }
+            else if (HighSchool.Contains(schoolName))
+            {
+                return 3; // 高校は3年
+            }
+            else
+            {
+                Debug.LogError("Invalid school name provided. Returning default value.");
+                return 0; // 不明な学校名の場合は0を返す
+            }
+        }
     }
 }
