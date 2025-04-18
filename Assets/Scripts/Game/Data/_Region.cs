@@ -16,11 +16,16 @@ namespace App.Scripts.Game.Data
             { "四国", new List<string> { "徳島県", "香川県", "愛媛県", "高知県" } },
             { "九州・沖縄", new List<string> { "福岡県", "佐賀県", "長崎県", "熊本県", "大分県", "宮崎県", "鹿児島県", "沖縄県" } }
         };
+
         public List<string> GetPrefectures(string region)
         {
             if (regionToPrefectures.ContainsKey(region))
             {
                 return regionToPrefectures[region];
+            }
+            else if (region == "気にしない")
+            {
+                return GetAllPrefectures();
             }
             else
             {
@@ -34,6 +39,14 @@ namespace App.Scripts.Game.Data
             return new List<string>(regionToPrefectures.Keys);
         }
 
-
+        public List<string> GetAllPrefectures()
+        {
+            List<string> allPrefectures = new List<string>();
+            foreach (var prefectures in regionToPrefectures.Values)
+            {
+                allPrefectures.AddRange(prefectures);
+            }
+            return allPrefectures;
+        }
     }
 }

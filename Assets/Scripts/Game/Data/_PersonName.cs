@@ -1093,8 +1093,9 @@ namespace App.Scripts.Game.Data
         public List<string> GetPersonName(int firstNameIndex, int lastNameIndex)
         {
             List<string> personName = new List<string>();
-            personName.Add(FirstNames[firstNameIndex]);
             personName.Add(LastNames[lastNameIndex]);
+            personName.Add(FirstNames[firstNameIndex]);
+            
             return personName;
         }
 
