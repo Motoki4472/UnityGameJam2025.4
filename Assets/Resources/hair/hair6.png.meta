@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: d2c7ffdaba3bfa24e8ccde86e39968a6
+guid: 613d3113d03a5124a9b0c03c035aa0bb
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 4381451305876430452
-    second: paperTitle_0
+      213: 260523651113578215
+    second: hair6_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -46,7 +46,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 2
+  spriteMode: 1
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -113,13 +113,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: paperTitle_0
+      name: hair6_0
       rect:
         serializedVersion: 2
         x: 0
-        y: 0
-        width: 2355
-        height: 2936
+        y: 92
+        width: 600
+        height: 658
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -128,8 +128,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 47e9f6fafba0ecc30800000000000000
-      internalID: 4381451305876430452
+      spriteID: 7ee663061e09d9300800000000000000
+      internalID: 260523651113578215
       vertices: []
       indices: 
       edges: []
@@ -138,7 +138,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 5e97eb03825dee720800000000000000
     internalID: 0
     vertices: []
     indices: 
@@ -147,7 +147,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      hair6_0: 260523651113578215
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

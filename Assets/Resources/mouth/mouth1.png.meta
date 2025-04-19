@@ -1,10 +1,16 @@
 fileFormatVersion: 2
-guid: d2c7ffdaba3bfa24e8ccde86e39968a6
+guid: e2823d52349bd27449a1c0a0847e41ab
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 4381451305876430452
-    second: paperTitle_0
+      213: -7656974713994529759
+    second: mouth1_0
+  - first:
+      213: 7564538146242512995
+    second: mouth1_1
+  - first:
+      213: 3159875014893740609
+    second: mouth1_2
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -46,7 +52,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 2
+  spriteMode: 1
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -113,13 +119,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: paperTitle_0
+      name: mouth1_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 0
-        width: 2355
-        height: 2936
+        x: 220
+        y: 175
+        width: 158
+        height: 147
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -128,8 +134,52 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 47e9f6fafba0ecc30800000000000000
-      internalID: 4381451305876430452
+      spriteID: 1243536e016fcb590800000000000000
+      internalID: -7656974713994529759
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mouth1_1
+      rect:
+        serializedVersion: 2
+        x: 227
+        y: 152
+        width: 54
+        height: 45
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3684da88d53aaf860800000000000000
+      internalID: 7564538146242512995
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mouth1_2
+      rect:
+        serializedVersion: 2
+        x: 305
+        y: 147
+        width: 27
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 142af5595912adb20800000000000000
+      internalID: 3159875014893740609
       vertices: []
       indices: 
       edges: []
@@ -138,7 +188,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 5e97eb03825dee720800000000000000
     internalID: 0
     vertices: []
     indices: 
@@ -147,7 +197,10 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      mouth1_0: -7656974713994529759
+      mouth1_1: 7564538146242512995
+      mouth1_2: 3159875014893740609
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
