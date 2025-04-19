@@ -38,15 +38,12 @@ namespace App.Scripts.Game.Profile
             _zodiacText.text = profileParameter.GetZodiac();
             _mbtiText.text = profileParameter.GetMbti();
             _regionText.text = profileParameter.GetRegion();
-            _isCorrect = profileParameter.IsCorrect();
-            _isPhotoEffect = profileParameter.IsPhotoEffect();
-            _isBackgroundFraud = profileParameter.IsBackgroundFraud();
+            _isCorrect = profileParameter.GetIsCorrect();
+            _isPhotoEffect = profileParameter.GetIsPhotoEffect();
+            _isBackgroundFraud = profileParameter.GetIsBackgroundFraud();
 
             // 画像を設定
-            if (_profileImage != null && profileSprite != null)
-            {
-                _profileImage.sprite = profileSprite;
-            }
+
         }
 
         public bool IsCorrect()

@@ -92,6 +92,10 @@ namespace App.Scripts.Game.Profile
         {
             this._isBackgroundFraud = isBackgroundFraud;
         }
+        public bool GetIsBackgroundFraud()
+        {
+            return _isBackgroundFraud;
+        }
 
     }
 }
