@@ -1,10 +1,16 @@
 fileFormatVersion: 2
-guid: 64f076fa0e705a247b693979cadd79ef
+guid: c0c992edc29e1ad4a9123a579ce00cd5
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -1469909079130451432
-    second: paper_0
+      213: -7656974713994529759
+    second: mouth1_0
+  - first:
+      213: 7564538146242512995
+    second: mouth1_1
+  - first:
+      213: 3159875014893740609
+    second: mouth1_2
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -113,13 +119,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: paper_0
+      name: mouth1_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 0
-        width: 1947
-        height: 2659
+        x: 220
+        y: 175
+        width: 158
+        height: 147
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -128,8 +134,52 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 812de4efa75d99be0800000000000000
-      internalID: -1469909079130451432
+      spriteID: 1243536e016fcb590800000000000000
+      internalID: -7656974713994529759
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mouth1_1
+      rect:
+        serializedVersion: 2
+        x: 227
+        y: 152
+        width: 54
+        height: 45
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3684da88d53aaf860800000000000000
+      internalID: 7564538146242512995
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mouth1_2
+      rect:
+        serializedVersion: 2
+        x: 305
+        y: 147
+        width: 27
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 142af5595912adb20800000000000000
+      internalID: 3159875014893740609
       vertices: []
       indices: 
       edges: []
@@ -147,8 +197,7 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable:
-      paper_0: -1469909079130451432
+    nameFileIdTable: {}
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

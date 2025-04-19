@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: b027990e8ac1e4f4a99e068057dcd7ed
+guid: c598d6ea88d2c814ba61edf045ac7077
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 2000577243008838573
-    second: button_title_0
+      213: -1086207392447090945
+    second: hair4_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -113,13 +113,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: button_title_0
+      name: hair4_0
       rect:
         serializedVersion: 2
-        x: 1
+        x: 48
         y: 0
-        width: 736
-        height: 257
+        width: 507
+        height: 710
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -128,8 +128,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: daba54b276a73cb10800000000000000
-      internalID: 2000577243008838573
+      spriteID: ffea9cca1240de0f0800000000000000
+      internalID: -1086207392447090945
       vertices: []
       indices: 
       edges: []

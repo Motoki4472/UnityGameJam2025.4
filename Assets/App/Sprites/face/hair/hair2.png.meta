@@ -1,10 +1,13 @@
 fileFormatVersion: 2
-guid: 86178e0d1e8aff24fb5a4d637b30c3dc
+guid: f5410ff5a4ede6a4080934e10e3a9e45
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 1208040086343421634
-    second: image_0
+      213: 2022692091649294647
+    second: hair2_0
+  - first:
+      213: -5116093031660957987
+    second: hair2_1
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -113,13 +116,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: image_0
+      name: hair2_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 0
-        width: 3948
-        height: 3948
+        x: 37
+        y: 99
+        width: 526
+        height: 611
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -128,8 +131,30 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 2ce8eecde02d3c010800000000000000
-      internalID: 1208040086343421634
+      spriteID: 7318fbc9dbb021c10800000000000000
+      internalID: 2022692091649294647
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: hair2_1
+      rect:
+        serializedVersion: 2
+        x: 325
+        y: 709
+        width: 31
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dde4ff17e7cfff8b0800000000000000
+      internalID: -5116093031660957987
       vertices: []
       indices: 
       edges: []

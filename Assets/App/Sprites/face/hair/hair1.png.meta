@@ -1,10 +1,13 @@
 fileFormatVersion: 2
-guid: d1507e4fefc421440952515f334f9c60
+guid: 4b196a7ccc6f4584091eab4f916fdaa6
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -1371688077652994428
-    second: button_retry_0
+      213: -3318640803889795958
+    second: hair1_0
+  - first:
+      213: -9064456837609552796
+    second: hair1_1
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -113,13 +116,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: button_retry_0
+      name: hair1_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 0
-        width: 736
-        height: 256
+        x: 50
+        y: 115
+        width: 497
+        height: 625
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -128,8 +131,30 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 486dadcf5f8c6fce0800000000000000
-      internalID: -1371688077652994428
+      spriteID: a8c280395c1d1f1d0800000000000000
+      internalID: -3318640803889795958
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: hair1_1
+      rect:
+        serializedVersion: 2
+        x: 61
+        y: 5
+        width: 157
+        height: 263
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4640c602884943280800000000000000
+      internalID: -9064456837609552796
       vertices: []
       indices: 
       edges: []
