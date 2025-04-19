@@ -1,6 +1,6 @@
 using UnityEngine;
-using TMPro; // TextMeshPro を使用するために必要
-using App.Scripts.Game.Data; // _DemandParameter クラスを使用するために必要
+using TMPro;
+using App.Scripts.Game.Data;
 
 namespace App.Scripts.Game.Demand
 {
@@ -8,7 +8,6 @@ namespace App.Scripts.Game.Demand
     {
         private _DemandParameter _demandParameter;
 
-        // 各項目ごとに別々の TextMeshProUGUI コンポーネントをアタッチ
         [SerializeField] private TextMeshProUGUI appearanceText;
         [SerializeField] private TextMeshProUGUI ageText;
         [SerializeField] private TextMeshProUGUI genderText;
@@ -16,10 +15,6 @@ namespace App.Scripts.Game.Demand
         [SerializeField] private TextMeshProUGUI mbtiText;
         [SerializeField] private TextMeshProUGUI regionText;
 
-        private void Start()
-        {
-            // 初期化処理が必要であればここに記述
-        }
 
         public void SetDemandParameter(_DemandParameter demandParameter)
         {
