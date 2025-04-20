@@ -320,6 +320,18 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
+      - m_Target: {fileID: 1878559756}
+        m_TargetAssemblyTypeName: App.Common.Camera.SEController, Assembly-CSharp
+        m_MethodName: PlaySE
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
       - m_Target: {fileID: 599795245}
         m_TargetAssemblyTypeName: App.Scripts.Common.Setting.SettingUIManager, Assembly-CSharp
         m_MethodName: CloseSetting
@@ -688,6 +700,135 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 299544643}
   m_CullTransparentMesh: 1
+--- !u!1 &320377646
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 320377648}
+  - component: {fileID: 320377647}
+  m_Layer: 0
+  m_Name: SE
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!82 &320377647
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 320377646}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 6504945077382945730, guid: 5cd124a4d7c627846a4ce701df1afd53, type: 2}
+  m_audioClip: {fileID: 8300000, guid: 0cac43506e2a38544a81e5ec20131834, type: 3}
+  m_Resource: {fileID: 8300000, guid: 0cac43506e2a38544a81e5ec20131834, type: 3}
+  m_PlayOnAwake: 1
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 1
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+--- !u!4 &320377648
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 320377646}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &390909007
 GameObject:
   m_ObjectHideFlags: 0
@@ -1202,7 +1343,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 840085748}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1878559756}
+        m_TargetAssemblyTypeName: App.Common.Camera.SEController, Assembly-CSharp
+        m_MethodName: PlaySE
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &840085748
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1545,6 +1698,18 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
+      - m_Target: {fileID: 1878559756}
+        m_TargetAssemblyTypeName: App.Common.Camera.SEController, Assembly-CSharp
+        m_MethodName: PlaySE
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
       - m_Target: {fileID: 599795245}
         m_TargetAssemblyTypeName: App.Scripts.Common.Setting.SettingUIManager, Assembly-CSharp
         m_MethodName: OpenSetting
@@ -1885,6 +2050,18 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
+      - m_Target: {fileID: 1878559756}
+        m_TargetAssemblyTypeName: App.Common.Camera.SEController, Assembly-CSharp
+        m_MethodName: PlaySE
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
       - m_Target: {fileID: 5217721}
         m_TargetAssemblyTypeName: App.Common._SceneChange.SceneChange, Assembly-CSharp
         m_MethodName: ToGame
@@ -2423,9 +2600,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   SEList:
-  - {fileID: 8300000, guid: 0cac43506e2a38544a81e5ec20131834, type: 3}
+  - {fileID: 8300000, guid: 22e254c0bbee08f47bfb0ef8d4c67796, type: 3}
+  - {fileID: 8300000, guid: 5f1228b3dcc56264f9fe115fd5a9a094, type: 3}
+  - {fileID: 8300000, guid: 4003eaed65e9a4644b251f47349c10ce, type: 3}
+  - {fileID: 8300000, guid: 98486e83cb704bd489806e078779d06f, type: 3}
+  - {fileID: 8300000, guid: 237fd184d95a331429513fb7615b4d5f, type: 3}
+  - {fileID: 8300000, guid: f6f56d0a44dbae14190803f2a8f8ad54, type: 3}
+  - {fileID: 8300000, guid: 72a0b4f2d05fbd047ae26a50d18672e0, type: 3}
+  - {fileID: 8300000, guid: b11876a04c7135f4c8844be373d956b0, type: 3}
+  - {fileID: 8300000, guid: 8de2ac305e8181141b5f3a5e6469ae2d, type: 3}
+  - {fileID: 8300000, guid: 72bfcfda80c74b54b860c5e4f25a6723, type: 3}
   AudioMixer: {fileID: 24100000, guid: 5cd124a4d7c627846a4ce701df1afd53, type: 2}
-  SESource: {fileID: 1479863251}
+  SESource: {fileID: 320377647}
 --- !u!114 &1878559757
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2810,3 +2996,4 @@ SceneRoots:
   - {fileID: 599795246}
   - {fileID: 1878559759}
   - {fileID: 1479863252}
+  - {fileID: 320377648}
