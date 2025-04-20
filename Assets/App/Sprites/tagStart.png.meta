@@ -116,10 +116,10 @@ TextureImporter:
       name: tagStart_0
       rect:
         serializedVersion: 2
-        x: 0
+        x: 1
         y: 0
-        width: 752
-        height: 308
+        width: 736
+        height: 256
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -147,7 +147,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      tagStart_0: 3290795694785800472
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
