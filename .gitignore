@@ -77,3 +77,5 @@ crashlytics-build.properties
 /[Aa]ssets/[Pp]lugins/*
 /[Aa]ssets/TextMesh Pro/*
 /[Aa]ssets/[Ss]ounds/*
+/[Aa]ssets/App/Sprites/*
+/[Aa]ssets/App/Audio/1weekgamejam2504_sound/*
