@@ -17,6 +17,7 @@ namespace App.Scripts.Game.Demand
         [SerializeField] private GameObject _demandPrefab;
         [SerializeField] private GameObject _profilePrefab;
         [SerializeField] private ProcessSystem _processSystem;
+        [SerializeField] private GameObject _canvas;
 
         public void Start()
         {
@@ -24,20 +25,14 @@ namespace App.Scripts.Game.Demand
             _generateProfile = new _GenerateProfile();
             _generateMistakeProfile = new _GenerateMistakeProfile();
             _surveyList = new _SurveyList();
-
-            GenerateDemandAndProfile();
-
-            
-            
         }
         public void GenerateDemandAndProfile()
         {
             List<GameObject> ProfilePrefabList = new List<GameObject>();
             System.Random random = new System.Random();
             _DemandParameter demandParameter = _generateDemand.GenerateDemandParameter(random.Next(0, 4));
-            // DemandPrefabのインスタンスを生成
             GameObject demandPrefabInstance = Instantiate(_demandPrefab, transform.position, Quaternion.identity);
-            // DemandPrefabコンポーネントを取得
+            demandPrefabInstance.transform.SetParent(_canvas.transform, false);
             DemandPrefab demandPrefab = demandPrefabInstance.GetComponent<DemandPrefab>();
             // DemandPrefabにパラメータを設定
             demandPrefab.SetDemandParameter(demandParameter);
@@ -49,11 +44,9 @@ namespace App.Scripts.Game.Demand
                     ProfileParameter[i] = _generateMistakeProfile.GenerateMistakeProfileParameter(demandParameter,ProfileParameter[i]);
                     
                 }
-                // ProfilePrefabのインスタンスを生成
                 GameObject profilePrefabInstance = Instantiate(_profilePrefab, transform.position, Quaternion.identity);
-                // ProfilePrefabコンポーネントを取得
+                profilePrefabInstance.transform.SetParent(_canvas.transform, false);
                 ProfilePrefab profilePrefab = profilePrefabInstance.GetComponent<ProfilePrefab>();
-                // ProfilePrefabにパラメータを設定
                 profilePrefab.SetProfile(ProfileParameter[i]);
                 // ProfilePrefabListにProfilePrefabを追加
                 ProfilePrefabList.Add(profilePrefabInstance);
