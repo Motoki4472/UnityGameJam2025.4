@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 3b291250945b40e48a4615653a42bd16
+guid: 2dbb53661e6473a45a40481d1f1b27f2
 TextureImporter:
   internalIDToNameTable:
   - first:
@@ -58,7 +58,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 2
+  spriteMode: 1
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -238,7 +238,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 5e97eb03825dee720800000000000000
     internalID: 0
     vertices: []
     indices: 
@@ -247,7 +247,12 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      mouth2_0: 7946741686711457174
+      mouth2_1: 5315574784355343132
+      mouth2_2: 7327422470654816996
+      mouth2_3: -243681920417176776
+      mouth2_4: -9113328302099072954
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

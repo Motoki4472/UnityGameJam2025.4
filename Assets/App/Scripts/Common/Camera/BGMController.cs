@@ -8,8 +8,8 @@ namespace App.Common.Camera
     public class BGMController : MonoBehaviour
     {
         [SerializeField] List<AudioClip> BGMList = new List<AudioClip>();
-        [SerializeField] private AudioMixer AudioMixer = null;
-        [SerializeField] private AudioSource BGMSource = null;
+        [SerializeField] private static AudioMixer AudioMixer = null;
+        [SerializeField] private static AudioSource BGMSource = null;
         private static AudioClip[] staticBGMClips = null;
 
         string debugScene = "";
@@ -33,15 +33,25 @@ namespace App.Common.Camera
             }
         }
 
-        public void PlayGameBGM()
+        public static void PlayGameBGM()
         {
             InitializeAudioSource(BGMSource);
             BGMSource.clip = staticBGMClips[1];
             BGMSource.Play();
         }
 
-        private void InitializeAudioSource(AudioSource audioSource)
+        private static void InitializeAudioSource(AudioSource audioSource)
         {
+            if (audioSource.clip == null)
+            {
+                Debug.LogError("AudioClipがnullです。");
+                return;
+            }
+            if (AudioMixer == null)
+            {
+                Debug.LogError("AudioMixerがnullです。");
+                return;
+            }
             audioSource.outputAudioMixerGroup = AudioMixer.FindMatchingGroups("BGM")[0];
             audioSource.loop = true;
             audioSource.playOnAwake = false;
