@@ -8,31 +8,37 @@ namespace App.Scripts.Game.Data
     {
         private List<string> Hair = new List<string>
         {
-            "ロング",
-            "ボブ",
-            "ショート"
+            "ポニーテール",
+            "茶髪ボブ",
+            "紫髪ボブ",
+            "黒髪ロング",
+            "金髪ストレート",
+            "ツインテール",
+            "金髪ウェーブ",
         };
 
         private List<string> Eye = new List<string>
         {
             "たれ目",
-            "切れ長",
-            "ぱっちり"
+            "つり目",
+            "三白眼",
+            "切れ長"
         };
 
         private List<string> Mouth = new List<string>
         {
-            "にっこり",
-            "ふんわり",
-            "すまし顔"
+            "厚めの唇",
+            "ミニマルな唇",
+            "艶っぽい口元",
+            "赤リップ",
+            "八重歯"
         };
 
         private List<string> Accessory = new List<string>
         {
-            "アクセサリーなし",
-            "メガネ",
-            "ピアス",
-            "ネックレス"
+            "そばかす",
+            "なきぼくろ",
+            "眼鏡"
         };
 
         public List<(string, int)> GetAppearance()

@@ -3,6 +3,7 @@ using UnityEngine.UI; // 画像を扱うために必要
 using TMPro;
 using App.Scripts.Game.Data;
 using App.Scripts.Game.Demand;
+using App.Game.ProcessSystem;
 
 namespace App.Scripts.Game.Profile
 {
@@ -20,6 +21,7 @@ namespace App.Scripts.Game.Profile
         [SerializeField] private bool _isCorrect;
         [SerializeField] private bool _isPhotoEffect;
         [SerializeField] private bool _isBackgroundFraud;
+        private ProcessSystem _processSystem;
 
         public void SetProfile(_ProfileParameter profileParameter)
         {
@@ -44,6 +46,16 @@ namespace App.Scripts.Game.Profile
 
             // 画像を設定
 
+        }
+        public void SetProcessSystem(ProcessSystem processSystem)
+        {
+            this._processSystem = processSystem;
+        }
+
+
+        public void Match()
+        {
+            _processSystem.Match(_isCorrect);
         }
 
         public bool IsCorrect()

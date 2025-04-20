@@ -1,6 +1,9 @@
 using UnityEngine;
+using System.Collections.Generic;
+using System.Linq;
 using App.Scripts.Game.Profile;
 using App.Scripts.Game.Documents;
+using App.Game.ProcessSystem;
 
 namespace App.Scripts.Game.Demand
 {
@@ -12,6 +15,8 @@ namespace App.Scripts.Game.Demand
         private _GenerateMistakeProfile _generateMistakeProfile;
         private _ProfileParameter[] ProfileParameter = new _ProfileParameter[3];
         [SerializeField] private GameObject _demandPrefab;
+        [SerializeField] private GameObject _profilePrefab;
+        [SerializeField] private ProcessSystem _processSystem;
 
         public void Start()
         {
@@ -27,6 +32,7 @@ namespace App.Scripts.Game.Demand
         }
         public void GenerateDemandAndProfile()
         {
+            List<GameObject> ProfilePrefabList = new List<GameObject>();
             System.Random random = new System.Random();
             _DemandParameter demandParameter = _generateDemand.GenerateDemandParameter(random.Next(0, 4));
             // DemandPrefabのインスタンスを生成
@@ -43,8 +49,19 @@ namespace App.Scripts.Game.Demand
                     ProfileParameter[i] = _generateMistakeProfile.GenerateMistakeProfileParameter(demandParameter,ProfileParameter[i]);
                     
                 }
+                // ProfilePrefabのインスタンスを生成
+                GameObject profilePrefabInstance = Instantiate(_profilePrefab, transform.position, Quaternion.identity);
+                // ProfilePrefabコンポーネントを取得
+                ProfilePrefab profilePrefab = profilePrefabInstance.GetComponent<ProfilePrefab>();
+                // ProfilePrefabにパラメータを設定
+                profilePrefab.SetProfile(ProfileParameter[i]);
+                // ProfilePrefabListにProfilePrefabを追加
+                ProfilePrefabList.Add(profilePrefabInstance);
                 _surveyList.GenerateStudentList(ProfileParameter[i]);
             }
+            // Listの中身をランダムに入れ替え
+            ProfilePrefabList = ProfilePrefabList.OrderBy(x => random.Next()).ToList();
+            _processSystem.SetProfileList(ProfilePrefabList);
         }
     }
 }
