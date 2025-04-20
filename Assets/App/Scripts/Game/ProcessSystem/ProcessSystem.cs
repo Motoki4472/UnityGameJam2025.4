@@ -10,7 +10,6 @@ namespace App.Game.ProcessSystem
         private _ProcessStateHolder ProcessStateHolder = new _ProcessStateHolder();
         private _LimitTimeHolder LimitTimeHolder = new _LimitTimeHolder();
         private _ActiveUserHolder ActiveUserHolder = new _ActiveUserHolder();
-        [SerializeField] private BGMController BGMController = null;
         [SerializeField] private float LimitTime = 60f;
         [SerializeField] private float ProcessInterval = 0.1f;
         [SerializeField] private int InitialActiveUser = 100000;
