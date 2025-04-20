@@ -12,14 +12,20 @@ namespace App.Common.Camera
         [SerializeField] private Slider bgmSlider = null;
         [SerializeField] private Slider seSlider = null;
         private static _PlayerPrefsSystem PlayerPrefsSystem = new _PlayerPrefsSystem();
-        private float masterVolume = 1f;
-        private float bgmVolume = 1f;
-        private float seVolume = 1f;
+        private static float masterVolume = 1f;
+        private static float bgmVolume = 1f;
+        private static float seVolume = 1f;
+        static float a, b, c;
         public void Awake()
         {
             InitializeAudioMixer(audioMixer);
             InitializeVolumeSliders();
-            
+        }
+        public void Start()
+        {
+            SetBGMVolume(bgmVolume);
+            SetSEVolume(seVolume);
+            SetMasterVolume(masterVolume);
         }
         private void InitializeVolumeSliders()
         {
@@ -39,15 +45,15 @@ namespace App.Common.Camera
 
         private static void InitializeAudioMixer(AudioMixer mixer)
         {
-            PlayerPrefsSystem.LoadVolumeSetting(out float master_value, out float bgm_value, out float se_value);
+            PlayerPrefsSystem.LoadVolumeSetting(out masterVolume, out bgmVolume, out seVolume);
             if (mixer == null)
             {
                 Debug.LogError("AudioMixerがnullです。");
                 return;
             }
-            mixer.SetFloat("Master", LinearToDecibel(master_value));
-            mixer.SetFloat("BGM", LinearToDecibel(bgm_value));
-            mixer.SetFloat("SE", LinearToDecibel(se_value));
+            mixer.SetFloat("Master", LinearToDecibel(masterVolume));
+            mixer.SetFloat("BGM", LinearToDecibel(bgmVolume));
+            mixer.SetFloat("SE", LinearToDecibel(seVolume));
         }
 
         public void SetMasterVolume(float value)
