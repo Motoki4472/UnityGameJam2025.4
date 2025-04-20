@@ -54,6 +54,7 @@ namespace App.Game.ProcessSystem
                     ActiveUserHolder.CalculateActiveUser(DefaultChangeValue, AmplificationValue);
                     if (LimitTimeHolder.GetLimitTime() <= 0f)
                     {
+                        ProcessStateHolder.Wait();
                         ProcessStateHolder.Finish();
                     }
                 }
