@@ -10,7 +10,7 @@ namespace App.Scripts.Game.Documents
 
         public void Down()
         {
-            transform.DOMoveY(document.transform.position.y - moveDistance, moveDuration)
+            transform.DOMoveY(transform.position.y - moveDistance, moveDuration)
                 .SetEase(Ease.OutQuad);
 
         }
@@ -18,7 +18,7 @@ namespace App.Scripts.Game.Documents
         public void Up()
         {
 
-            document.transform.DOMoveY(document.transform.position.y + moveDistance, moveDuration)
+            transform.DOMoveY(transform.position.y + moveDistance, moveDuration)
                 .SetEase(Ease.OutQuad);
         }
     }
