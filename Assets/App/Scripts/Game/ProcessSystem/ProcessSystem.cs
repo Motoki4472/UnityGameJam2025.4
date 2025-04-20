@@ -22,6 +22,7 @@ namespace App.Game.ProcessSystem
         [SerializeField] private GameObject DemandSystem;
         [SerializeField] private ReviewSystem ReviewSystem;
         private List<GameObject> ProfileList = new List<GameObject>();
+        private List<GameObject> SurveyList = new List<GameObject>();
         private float elapsedTime = 0f;
         private float ReviewTime = 0f;
         void Start()
@@ -74,6 +75,15 @@ namespace App.Game.ProcessSystem
         public List<GameObject> GetProfileList()
         {
             return ProfileList;
+        }
+
+        public void SetSurveyList(List<GameObject> surveyList)
+        {
+            SurveyList = surveyList;
+        }
+        public List<GameObject> GetSurveyList()
+        {
+            return SurveyList;
         }
 
         public void Match(bool isCorrect)

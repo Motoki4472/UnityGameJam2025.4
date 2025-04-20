@@ -16,8 +16,15 @@ namespace App.Scripts.Game.Demand
         private _ProfileParameter[] ProfileParameter = new _ProfileParameter[3];
         [SerializeField] private GameObject _demandPrefab;
         [SerializeField] private GameObject _profilePrefab;
+        [SerializeField] private GameObject _surveyPrefab;
         [SerializeField] private ProcessSystem _processSystem;
+        [SerializeField] private List<DocumentsButton> _documentsButton;
+        [SerializeField] private GameObject _ZodiacDocument;
         [SerializeField] private GameObject _canvas;
+        [SerializeField] private Vector3 _demandPosition = new Vector3(0, 0, 0); // ワールド座標での生成位置
+        [SerializeField] private Vector3 _profilePosition = new Vector3(0, 0, 0); // ワールド座標での生成位置
+        private List<GameObject> ProfilePrefabList = new List<GameObject>();
+        private List<GameObject> SurveyPrefabList = new List<GameObject>();
 
         public void Start()
         {
@@ -26,35 +33,64 @@ namespace App.Scripts.Game.Demand
             _generateMistakeProfile = new _GenerateMistakeProfile();
             _surveyList = new _SurveyList();
         }
+
         public void GenerateDemandAndProfile()
         {
-            List<GameObject> ProfilePrefabList = new List<GameObject>();
+            ProfilePrefabList = new List<GameObject>();
+            SurveyPrefabList = new List<GameObject>();
             System.Random random = new System.Random();
+
+            // DemandPrefabの生成
             _DemandParameter demandParameter = _generateDemand.GenerateDemandParameter(random.Next(0, 4));
-            GameObject demandPrefabInstance = Instantiate(_demandPrefab, transform.position, Quaternion.identity);
+            GameObject demandPrefabInstance = Instantiate(_demandPrefab, Vector3.zero, Quaternion.identity);
             demandPrefabInstance.transform.SetParent(_canvas.transform, false);
+            demandPrefabInstance.transform.position = _demandPosition; // ワールド座標で移動
             DemandPrefab demandPrefab = demandPrefabInstance.GetComponent<DemandPrefab>();
-            // DemandPrefabにパラメータを設定
             demandPrefab.SetDemandParameter(demandParameter);
-            for(int i = 0; i < ProfileParameter.Length; i++)
+
+            // ProfilePrefabの生成
+            for (int i = 0; i < ProfileParameter.Length; i++)
             {
                 ProfileParameter[i] = _generateProfile.GenerateProfileParameter(demandParameter);
-                if(i != 0)
+                if (i != 0)
                 {
-                    ProfileParameter[i] = _generateMistakeProfile.GenerateMistakeProfileParameter(demandParameter,ProfileParameter[i]);
-                    
+                    ProfileParameter[i] = _generateMistakeProfile.GenerateMistakeProfileParameter(demandParameter, ProfileParameter[i]);
                 }
-                GameObject profilePrefabInstance = Instantiate(_profilePrefab, transform.position, Quaternion.identity);
+
+                GameObject profilePrefabInstance = Instantiate(_profilePrefab, Vector3.zero, Quaternion.identity);
                 profilePrefabInstance.transform.SetParent(_canvas.transform, false);
+                profilePrefabInstance.transform.position = _profilePosition; // ワールド座標で移動
                 ProfilePrefab profilePrefab = profilePrefabInstance.GetComponent<ProfilePrefab>();
                 profilePrefab.SetProfile(ProfileParameter[i]);
-                // ProfilePrefabListにProfilePrefabを追加
                 ProfilePrefabList.Add(profilePrefabInstance);
-                _surveyList.GenerateStudentList(ProfileParameter[i]);
             }
+
             // Listの中身をランダムに入れ替え
             ProfilePrefabList = ProfilePrefabList.OrderBy(x => random.Next()).ToList();
             _processSystem.SetProfileList(ProfilePrefabList);
+
+            // SurveyPrefabの生成
+            for (int i = 0; i < ProfileParameter.Length; i++)
+            {
+                _surveyList.GenerateStudentList(ProfileParameter[i]);
+                GameObject surveyPrefabInstance = Instantiate(_surveyPrefab, Vector3.zero, Quaternion.identity);
+                surveyPrefabInstance.transform.SetParent(_canvas.transform, false);
+                surveyPrefabInstance.transform.position = _demandPosition; // ワールド座標で移動
+                SurveyPrefab surveyPrefab = surveyPrefabInstance.GetComponent<SurveyPrefab>();
+                surveyPrefab.SetSurvey(_surveyList);
+                SurveyPrefabList.Add(surveyPrefabInstance);
+            }
+            _processSystem.SetSurveyList(SurveyPrefabList);
+
+            //すべての_documentsButtonにdemandPrefabとsurveyPrefab3つとzodiacDocumentをこの順でリストにして渡す
+            List<GameObject> documentsList = new List<GameObject>();
+            documentsList.Add(demandPrefabInstance);
+            documentsList.AddRange(SurveyPrefabList);
+            //documentsList.Add(_ZodiacDocument); // ZodiacDocumentは一旦コメントアウト
+            foreach (var documentsButton in _documentsButton)
+            {
+                documentsButton.SetDocumentPrefabs(documentsList);
+            }
         }
     }
 }
