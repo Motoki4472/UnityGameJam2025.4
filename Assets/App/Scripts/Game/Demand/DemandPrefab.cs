@@ -31,12 +31,12 @@ namespace App.Scripts.Game.Demand
             }
 
             // 各 TextMeshProUGUI コンポーネントに _DemandParameter の値を設定
-            if (appearanceText != null) appearanceText.text = $"Appearance: {_demandParameter.GetAppearance()}";
-            if (ageText != null) ageText.text = $"Age: {_demandParameter.GetAge()}";
-            if (genderText != null) genderText.text = $"Gender: {_demandParameter.GetGender()}";
-            if (backgroundText != null) backgroundText.text = $"Background: {_demandParameter.GetBackground()}";
+            if (appearanceText != null) appearanceText.text = $"外見: {_demandParameter.GetAppearance()}";
+            if (ageText != null) ageText.text = $"年齢: {_demandParameter.GetAge()}";
+            if (genderText != null) genderText.text = $"性別: {_demandParameter.GetGender()}";
+            if (backgroundText != null) backgroundText.text = $"来歴: {_demandParameter.GetBackground()}";
             if (mbtiText != null) mbtiText.text = $"MBTI: {_demandParameter.GetMbti()}";
-            if (regionText != null) regionText.text = $"Region: {_demandParameter.GetRegion()}";
+            if (regionText != null) regionText.text = $"出身: {_demandParameter.GetRegion()}";
         }
     }
 }
