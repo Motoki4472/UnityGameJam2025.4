@@ -14,8 +14,11 @@ namespace App.Common._SceneChange
             _SceneChangeManager.ChengeSceneToGame();
         }
 
-        public void ToResult(_SceneChangeManager.EndName endName, int finalActiveUserNumber, int maxActiveUserNumber)
+        public void ToResult()
         {
+            _SceneChangeManager.EndName endName = 0;
+            int finalActiveUserNumber = 100; 
+            int maxActiveUserNumber = 200;
             // シーン遷移を行う
             _SceneChangeManager.ChengeSceneToResult(
                 endName,
