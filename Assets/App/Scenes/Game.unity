@@ -266,6 +266,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   documentsPrefabs: []
   documentIndex: 0
+  bigTester: {fileID: 241211996}
 --- !u!1 &151436972
 GameObject:
   m_ObjectHideFlags: 0
@@ -413,6 +414,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   documentsPrefabs: []
   documentIndex: 4
+  bigTester: {fileID: 241211996}
 --- !u!1 &155789084
 GameObject:
   m_ObjectHideFlags: 0
@@ -560,7 +562,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ProfileButton2: {fileID: 683220249}
   moveDistance: 250
-  moveDuration: 0.5
+  moveDuration: 0.3
+  Profile: []
 --- !u!1 &241211995
 GameObject:
   m_ObjectHideFlags: 0
@@ -856,6 +859,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   documentsPrefabs: []
   documentIndex: 3
+  bigTester: {fileID: 241211996}
 --- !u!1 &357743079
 GameObject:
   m_ObjectHideFlags: 0
@@ -910,6 +914,7 @@ MonoBehaviour:
   BigTester: {fileID: 241211995}
   moveDistance: 100
   moveDuration: 0.5
+  documentsPrefabs: []
 --- !u!114 &357743082
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1151,7 +1156,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ProfileButton1: {fileID: 155789084}
   moveDistance: 250
-  moveDuration: 0.5
+  moveDuration: 0.3
+  Profile: []
 --- !u!1 &799195275
 GameObject:
   m_ObjectHideFlags: 0
@@ -1686,6 +1692,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   documentsPrefabs: []
   documentIndex: 1
+  bigTester: {fileID: 241211996}
 --- !u!1 &1438781952
 GameObject:
   m_ObjectHideFlags: 0
@@ -2222,6 +2229,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   documentsPrefabs: []
   documentIndex: 2
+  bigTester: {fileID: 241211996}
 --- !u!1 &1953541723
 GameObject:
   m_ObjectHideFlags: 0
@@ -2313,6 +2321,10 @@ MonoBehaviour:
   - {fileID: 1824160586}
   - {fileID: 319085949}
   - {fileID: 151436977}
+  _ProfileButton:
+  - {fileID: 155789084}
+  - {fileID: 683220249}
+  _miniTester: {fileID: 357743081}
   _ZodiacDocument: {fileID: 0}
   _canvas: {fileID: 828135106}
   _demandPosition: {x: 510, y: -200, z: 0}

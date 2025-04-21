@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using App.Scripts.Game.Profile;
 using App.Scripts.Game.Documents;
+using App.Scripts.Game.Tester;
 using App.Game.ProcessSystem;
 
 namespace App.Scripts.Game.Demand
@@ -19,6 +20,8 @@ namespace App.Scripts.Game.Demand
         [SerializeField] private GameObject _surveyPrefab;
         [SerializeField] private ProcessSystem _processSystem;
         [SerializeField] private List<DocumentsButton> _documentsButton;
+        [SerializeField] private List<GameObject> _ProfileButton;
+        [SerializeField] private MiniTester  _miniTester; // MiniTesterのインスタンスを取得するための変数
         [SerializeField] private GameObject _ZodiacDocument;
         [SerializeField] private GameObject _canvas;
         [SerializeField] private Vector3 _demandPosition = new Vector3(0, 0, 0); // ワールド座標での生成位置
@@ -90,6 +93,14 @@ namespace App.Scripts.Game.Demand
             foreach (var documentsButton in _documentsButton)
             {
                 documentsButton.SetDocumentPrefabs(documentsList);
+            }
+            _miniTester.SetDocuments(documentsList);
+
+            if (_ProfileButton.Count == 2)
+            {
+                // _ProfileButtonの各要素にProfilePrefabListを渡す
+                _ProfileButton[0].GetComponent<ProfileButton1>().SetProfileToButton(ProfilePrefabList);
+                _ProfileButton[1].GetComponent<ProfileButton2>().SetProfileToButton(ProfilePrefabList);
             }
         }
     }

@@ -1,5 +1,6 @@
 using UnityEngine;
 using System.Collections.Generic;
+using App.Scripts.Game.Tester;
 
 namespace App.Scripts.Game.Documents
 {
@@ -7,6 +8,7 @@ namespace App.Scripts.Game.Documents
     {
         [SerializeField] private List<GameObject> documentsPrefabs;
         [SerializeField] private int documentIndex = 0;
+        [SerializeField] private BigTester bigTester;
 
         public void OnClick()
         {
@@ -25,6 +27,13 @@ namespace App.Scripts.Game.Documents
                         }
                     }
 
+                }
+            }
+            if (bigTester != null)
+            {
+                if(bigTester.IsInCamera())
+                {
+                    bigTester.OnClick();
                 }
             }
 
@@ -49,7 +58,6 @@ namespace App.Scripts.Game.Documents
 
         public void SetDocumentPrefabs(List<GameObject> documents)
         {
-
             documentsPrefabs = documents;
         }
     }
