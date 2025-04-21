@@ -101,5 +101,24 @@ namespace App.Scripts.Game.Documents
             //　名簿をシャッフル
             StudentList = new HashSet<string>(StudentList.OrderBy(x => random.Next()).ToList());
         }
+        public string GetSurveyTitle()
+        {
+            return SurveyTitle;
+        }
+        public string GetStudentName()
+        {
+            List<string> studentArray = StudentList.ToList();
+
+            // ペアごとにフォーマット
+            string formattedList = "";
+            for (int i = 0; i < studentArray.Count; i += 2)
+            {
+                string first = studentArray[i];
+                string second = (i + 1 < studentArray.Count) ? studentArray[i + 1] : "";
+                formattedList += $"{first}     {second}\n"; // 空白5つで区切り、改行を追加
+            }
+
+            return formattedList;
+        }
     }
 }
