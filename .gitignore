@@ -50,6 +50,7 @@ ExportedObj/
 *.png
 *.tts
 *.ttf
+*.asset
 
 # Unity3D generated meta files
 *.pidb.meta
@@ -65,7 +66,6 @@ sysinfo.txt
 *.unitypackage
 *.unitypackage.meta
 *.app
-*.asset
 
 # Crashlytics generated file
 crashlytics-build.properties
