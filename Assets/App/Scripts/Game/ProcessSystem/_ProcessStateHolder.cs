@@ -1,5 +1,7 @@
 using UnityEngine;
+using System.Collections.Generic;
 using App.Scripts.Game.Demand;
+using App.Scripts.Game.Documents;
 
 namespace App.Game.ProcessSystem
 {
@@ -30,10 +32,13 @@ namespace App.Game.ProcessSystem
         public bool IsAnimationCollecting => state == ProcessState.animation_review;
         public bool IsAnimationGotoResult => state == ProcessState.animation_gotoresult;
 
+        private ProcessSystem processSystem;
+
         private GameObject demandSystem;
 
-        public _ProcessStateHolder(GameObject DemandSystem)
+        public _ProcessStateHolder(GameObject DemandSystem, ProcessSystem ProcessSystem)
         {
+            this.processSystem = ProcessSystem;
             this.demandSystem = DemandSystem;
         }
 
@@ -113,6 +118,7 @@ namespace App.Game.ProcessSystem
             {
                 state = ProcessState.animation_distributing;
                 demandSystem.GetComponent<DemandSystem>().GenerateDemandAndProfile();
+                Debug.Log("GenerateDemandAndProfile()が呼ばれました。");
                 // アニメーションの処理
                 Wait();
                 Play();
@@ -129,6 +135,7 @@ namespace App.Game.ProcessSystem
                 state = ProcessState.animation_matched;
                 // アニメーションの処理
                 //プロフィールと要望書、資料を消すアニメーションを実行
+                MatchAnimation();
                 Wait();
                 StartAnimationReview();
             }
@@ -164,6 +171,27 @@ namespace App.Game.ProcessSystem
             else
             {
                 Debug.LogError("この関数は状態が｛ state == waiting ｝の時に呼び出してください。");
+            }
+        }
+
+        private void MatchAnimation()
+        {
+            // ドキュメントリストを結合
+            List<GameObject> Documents = new List<GameObject>();
+            Documents.AddRange(processSystem.GetProfileList());
+            Documents.AddRange(processSystem.GetSurveyList());
+            Documents.Add(processSystem.GetDemand());
+
+            foreach (var document in Documents)
+            {
+                if (document != null)
+                {
+                    DocumentsAnimation animation = document.GetComponent<DocumentsAnimation>();
+                    if (animation != null)
+                    {
+                        animation.FadeOut();
+                    }
+                }
             }
         }
     }

@@ -141,8 +141,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0.5791, y: -16}
-  m_SizeDelta: {x: 504.3424, y: 614.5154}
+  m_AnchoredPosition: {x: 0, y: -110}
+  m_SizeDelta: {x: 510, y: 700}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &5091703321445371234
 CanvasRenderer:
@@ -199,8 +199,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 45
-  m_fontSizeBase: 45
+  m_fontSize: 42
+  m_fontSizeBase: 42
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -308,7 +308,11 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Profile
+  m_text: 'Profile
+
+    q
+
+    q'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 3c5f196423159e842b6913836befe7e9, type: 2}
   m_sharedMaterial: {fileID: -4030964763898027532, guid: 3c5f196423159e842b6913836befe7e9, type: 2}
@@ -335,8 +339,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 30
-  m_fontSizeBase: 30
+  m_fontSize: 40
+  m_fontSizeBase: 40
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18

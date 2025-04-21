@@ -21,13 +21,14 @@ namespace App.Game.ProcessSystem
         [SerializeField] private int AmplificationValue = 1;
         [SerializeField] private GameObject DemandSystem;
         [SerializeField] private ReviewSystem ReviewSystem;
+        private GameObject Demand;
         private List<GameObject> ProfileList = new List<GameObject>();
         private List<GameObject> SurveyList = new List<GameObject>();
         private float elapsedTime = 0f;
         private float ReviewTime = 0f;
         void Start()
         {
-            ProcessStateHolder = new _ProcessStateHolder(DemandSystem);
+            ProcessStateHolder = new _ProcessStateHolder(DemandSystem,this);
             LimitTimeHolder.SetLimitTime(LimitTime);
             ActiveUserHolder.SetInitialActiveUser(InitialActiveUser);
             BGMController.PlayGameBGM();
@@ -67,6 +68,14 @@ namespace App.Game.ProcessSystem
                 }
             }
         }
+        public void SetDemand(GameObject demand)
+        {
+            Demand = demand;
+        }
+        public GameObject GetDemand()
+        {
+            return Demand;
+        }
 
         public void SetProfileList(List<GameObject> profileList)
         {
@@ -88,10 +97,12 @@ namespace App.Game.ProcessSystem
 
         public void Match(bool isCorrect)
         {
+
             if (!ProcessStateHolder.IsPlaying) return;
             ReviewSystem.GenerateReviewComment(ReviewTime, isCorrect);
             ReviewTime = 0f;
             // ActiveUserに情報渡す
+            ProcessStateHolder.Wait();
             ProcessStateHolder.StartAnimationMatched();
 
         }

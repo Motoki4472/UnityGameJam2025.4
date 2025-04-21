@@ -11,11 +11,19 @@ namespace App.Scripts.Game.Documents
         private bool isAnimating = false; // アニメーション中かどうかのフラグ
 
         private RectTransform rectTransform;
+        private CanvasGroup canvasGroup; // フェードアウト用の CanvasGroup
 
         private void Awake()
         {
             // RectTransform を取得
             rectTransform = GetComponent<RectTransform>();
+
+            // CanvasGroup を取得または追加
+            canvasGroup = GetComponent<CanvasGroup>();
+            if (canvasGroup == null)
+            {
+                canvasGroup = gameObject.AddComponent<CanvasGroup>();
+            }
         }
 
         public void Down()
@@ -77,6 +85,36 @@ namespace App.Scripts.Game.Documents
         public bool IsInCamera()
         {
             return isInCamera;
+        }
+
+        public bool IsAnimating()
+        {
+            return isAnimating;
+        }
+
+        public void FadeOut()
+        {
+            if (canvasGroup == null)
+            {
+                Debug.LogError("CanvasGroup is not assigned or this object is not a UI element.");
+                return;
+            }
+            if (isAnimating)
+            {
+                Debug.Log("Animation is already in progress");
+                return;
+            }
+
+            isAnimating = true; // アニメーション開始
+
+            // フェードアウト
+            canvasGroup.DOFade(0, moveDuration)
+                .SetEase(Ease.OutQuad)
+                .OnComplete(() =>
+                {
+                    isAnimating = false; // アニメーション終了時にフラグをリセット
+                    Destroy(this.gameObject); // フェードアウト後にオブジェクトを削除
+                });
         }
     }
 }

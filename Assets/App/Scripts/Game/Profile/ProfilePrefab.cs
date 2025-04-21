@@ -55,6 +55,11 @@ namespace App.Scripts.Game.Profile
 
         public void Match()
         {
+            if (_processSystem == null)
+            {
+                Debug.LogError("ProcessSystem is not assigned.");
+                return;
+            }
             _processSystem.Match(_isCorrect);
         }
 
