@@ -80,4 +80,4 @@ crashlytics-build.properties
 /[Aa]ssets/TextMesh Pro/*
 /[Aa]ssets/[Ss]ounds/*
 
-/Assets/App/Fonts/"ArmedLemon SDF.asset"
+/Assets/App/Fonts/*ArmedLemon SDF.asset
