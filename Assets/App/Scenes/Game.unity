@@ -2327,8 +2327,8 @@ MonoBehaviour:
   _miniTester: {fileID: 357743081}
   _ZodiacDocument: {fileID: 0}
   _canvas: {fileID: 828135106}
-  _demandPosition: {x: 510, y: -200, z: 0}
-  _profilePosition: {x: 230, y: -200, z: 0}
+  _demandPosition: {x: 1300, y: -500, z: 0}
+  _profilePosition: {x: 600, y: -500, z: 0}
 --- !u!1 &1972295868
 GameObject:
   m_ObjectHideFlags: 0

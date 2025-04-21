@@ -17,7 +17,7 @@ namespace App.Scripts.Game.Profile
             this.facePartsIndex = facePartsIndex;
         }
 
-        void Start()
+        public void GenerateFace()
         {
             if (useRandom)
                 CreateRandomFace();

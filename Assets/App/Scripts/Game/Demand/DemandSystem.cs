@@ -29,20 +29,16 @@ namespace App.Scripts.Game.Demand
         private List<GameObject> ProfilePrefabList = new List<GameObject>();
         private List<GameObject> SurveyPrefabList = new List<GameObject>();
 
-        public void Start()
-        {
-            _generateDemand = new _GenerateDemand();
-            _generateProfile = new _GenerateProfile();
-            _generateMistakeProfile = new _GenerateMistakeProfile();
-            _surveyList = new _SurveyList();
-        }
-
         public void GenerateDemandAndProfile()
         {
             ProfilePrefabList = new List<GameObject>();
             SurveyPrefabList = new List<GameObject>();
             System.Random random = new System.Random();
 
+            _generateDemand = new _GenerateDemand();
+            _generateProfile = new _GenerateProfile();
+            _generateMistakeProfile = new _GenerateMistakeProfile();
+            _surveyList = new _SurveyList();
             // DemandPrefabの生成
             _DemandParameter demandParameter = _generateDemand.GenerateDemandParameter(random.Next(0, 4));
             GameObject demandPrefabInstance = Instantiate(_demandPrefab, Vector3.zero, Quaternion.identity);
