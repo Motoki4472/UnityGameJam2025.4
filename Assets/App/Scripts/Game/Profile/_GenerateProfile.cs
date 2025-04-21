@@ -60,7 +60,7 @@ namespace App.Scripts.Game.Profile
             {
                 if (ImageId[i] == -1)
                 {
-                    ImageId[i] = random.Next(0, AppearanceCounts[i] + 1);
+                    ImageId[i] = random.Next(0, AppearanceCounts[i]);
                 }
             }
             return ImageId;
