@@ -78,3 +78,6 @@ crashlytics-build.properties
 /[Aa]ssets/[Pp]lugins/*
 /[Aa]ssets/TextMesh Pro/*
 /[Aa]ssets/[Ss]ounds/*
+Assets/App/Fonts/AozoraMinchoMedium SDF.asset
+Assets/App/Fonts/ArmedLemo-SDF.asset
+Assets/App/Fonts/ArmedLemon SDF.asset
