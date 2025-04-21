@@ -17,7 +17,7 @@ namespace App.Scripts.Game.Profile
         [SerializeField] private TextMeshProUGUI _zodiacText;
         [SerializeField] private TextMeshProUGUI _mbtiText;
         [SerializeField] private TextMeshProUGUI _regionText;
-        [SerializeField] private Image _profileImage; // 画像を格納する変数を追加
+        [SerializeField] private GameObject _profileImage; // 画像を格納する変数を追加
         [SerializeField] private bool _isCorrect;
         [SerializeField] private bool _isPhotoEffect;
         [SerializeField] private bool _isBackgroundFraud;
@@ -45,7 +45,8 @@ namespace App.Scripts.Game.Profile
             _isBackgroundFraud = profileParameter.GetIsBackgroundFraud();
 
             // 画像を設定
-
+            _FaceGenerator faceGenerator = new _FaceGenerator(_profileImage, profileParameter.GetIsPhotoEffect(), profileParameter.GetImageId());
+            faceGenerator.GenerateFace();
         }
         public void SetProcessSystem(ProcessSystem processSystem)
         {
