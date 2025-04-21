@@ -65,6 +65,7 @@ sysinfo.txt
 *.unitypackage
 *.unitypackage.meta
 *.app
+*SDF.asset
 
 # Crashlytics generated file
 crashlytics-build.properties
@@ -78,3 +79,4 @@ crashlytics-build.properties
 /[Aa]ssets/[Pp]lugins/*
 /[Aa]ssets/TextMesh Pro/*
 /[Aa]ssets/[Ss]ounds/*
+
