@@ -14,13 +14,13 @@ namespace App.Common._SceneChange
             _SceneChangeManager.ChengeSceneToGame();
         }
 
-        public void ToResult()
+        public void ToResult(_SceneChangeManager.EndName endName, int finalActiveUserNumber, int maxActiveUserNumber)
         {
-            // 仮のデータ（必要に応じて動的に変更可能）
+            // シーン遷移を行う
             _SceneChangeManager.ChengeSceneToResult(
-                _SceneChangeManager.EndName.GoodEnd,
-                finalActiveUserNumber: 50,
-                maxActiveUserNumber: 100
+                endName,
+                finalActiveUserNumber,
+                maxActiveUserNumber
             );
         }
     }

@@ -1,6 +1,6 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
-using App.Title.Camera;
+using App.Result.Data;
 
 namespace App.Common._SceneChange
 {
