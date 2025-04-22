@@ -2,6 +2,7 @@ using UnityEngine;
 using System.Collections.Generic;
 using App.Scripts.Game.Demand;
 using App.Scripts.Game.Documents;
+using App.Scripts.Game.CutIn;
 
 namespace App.Game.ProcessSystem
 {
@@ -35,11 +36,13 @@ namespace App.Game.ProcessSystem
         private ProcessSystem processSystem;
 
         private GameObject demandSystem;
+        private CutInAnimation cutInAnimation;
 
-        public _ProcessStateHolder(GameObject DemandSystem, ProcessSystem ProcessSystem)
+        public _ProcessStateHolder(GameObject DemandSystem, ProcessSystem ProcessSystem, CutInAnimation CutInAnimation)
         {
             this.processSystem = ProcessSystem;
             this.demandSystem = DemandSystem;
+            this.cutInAnimation = CutInAnimation;
         }
 
         public void Pause()
@@ -177,6 +180,7 @@ namespace App.Game.ProcessSystem
         private void MatchAnimation()
         {
             // ドキュメントリストを結合
+            cutInAnimation.PlayCutin();
             List<GameObject> Documents = new List<GameObject>();
             Documents.AddRange(processSystem.GetProfileList());
             Documents.AddRange(processSystem.GetSurveyList());
