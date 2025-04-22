@@ -5,6 +5,7 @@ using App.Game.ProcessSystem;
 using App.Common.Camera;
 using App.Scripts.Game.Demand;
 using App.Scripts.Game.Review;
+using App.Scripts.Game.AmplificationDisplay;
 
 namespace App.Game.ProcessSystem
 {
@@ -23,6 +24,7 @@ namespace App.Game.ProcessSystem
         [SerializeField] private ReviewSystem ReviewSystem;
         [SerializeField] private TMPro.TextMeshProUGUI ActiveUserNumberDisplay;
         [SerializeField] private TMPro.TextMeshProUGUI LimitTimeDisplay;
+        [SerializeField] private AmplificationAnimation AmplificationAnimation;
         private GameObject Demand;
         private List<GameObject> ProfileList = new List<GameObject>();
         private List<GameObject> SurveyList = new List<GameObject>();
@@ -116,6 +118,7 @@ namespace App.Game.ProcessSystem
             { ActiveUserHolder.AddMagnificationValue(); }
             else
             { ActiveUserHolder.SubtractMagnificationValue(); }
+            AmplificationAnimation.StartAnimation(AmplificationValue, isCorrect);
             // ActiveUserに情報渡す
             ProcessStateHolder.Wait();
             ProcessStateHolder.StartAnimationMatched();
