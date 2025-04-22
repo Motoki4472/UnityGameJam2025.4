@@ -87,6 +87,7 @@ namespace App.Scripts.Game.Demand
             List<GameObject> documentsList = new List<GameObject>();
             documentsList.Add(demandPrefabInstance);
             documentsList.AddRange(SurveyPrefabList);
+            documentsList.Add(_ZodiacDocument);
             //documentsList.Add(_ZodiacDocument); // ZodiacDocumentは一旦コメントアウト
             foreach (var documentsButton in _documentsButton)
             {

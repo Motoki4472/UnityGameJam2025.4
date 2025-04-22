@@ -43,7 +43,7 @@ namespace App.Scripts.Game.Tester
             JudgementText.text = "検出中...";
             yield return new WaitForSeconds(0.5f);
             JudgementText.text = "検出完了";
-            yield return new WaitForSeconds(4f);
+            yield return new WaitForSeconds(1f);
             if (profile.GetComponent<ProfilePrefab>().IsPhotoEffect())
             {
                 JudgementText.text = "加工有";

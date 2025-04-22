@@ -21,6 +21,7 @@ namespace App.Game.ProcessSystem
         [SerializeField] private int AmplificationValue = 1;
         [SerializeField] private GameObject DemandSystem;
         [SerializeField] private ReviewSystem ReviewSystem;
+        [SerializeField] private TMPro.TextMeshProUGUI ActiveUserNumberDisplay;
         private GameObject Demand;
         private List<GameObject> ProfileList = new List<GameObject>();
         private List<GameObject> SurveyList = new List<GameObject>();
@@ -28,7 +29,7 @@ namespace App.Game.ProcessSystem
         private float ReviewTime = 0f;
         void Start()
         {
-            ProcessStateHolder = new _ProcessStateHolder(DemandSystem,this);
+            ProcessStateHolder = new _ProcessStateHolder(DemandSystem, this);
             LimitTimeHolder.SetLimitTime(LimitTime);
             ActiveUserHolder.SetInitialActiveUser(InitialActiveUser);
             BGMController.PlayGameBGM();
@@ -43,6 +44,10 @@ namespace App.Game.ProcessSystem
         private void ExecutePeriodically(float interval)
         {
             elapsedTime += Time.deltaTime;
+            if (ActiveUserNumberDisplay != null)
+            {
+                ActiveUserNumberDisplay.text = ActiveUserHolder.GetActiveUser().ToString();
+            }
             if (elapsedTime >= interval)
             {
                 elapsedTime -= interval;
@@ -101,6 +106,10 @@ namespace App.Game.ProcessSystem
             if (!ProcessStateHolder.IsPlaying) return;
             ReviewSystem.GenerateReviewComment(ReviewTime, isCorrect);
             ReviewTime = 0f;
+            if (isCorrect)
+            { ActiveUserHolder.AddMagnificationValue(); }
+            else
+            { ActiveUserHolder.SubtractMagnificationValue(); }
             // ActiveUserに情報渡す
             ProcessStateHolder.Wait();
             ProcessStateHolder.StartAnimationMatched();
