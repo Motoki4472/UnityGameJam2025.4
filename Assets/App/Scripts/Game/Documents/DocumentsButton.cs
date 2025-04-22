@@ -26,12 +26,11 @@ namespace App.Scripts.Game.Documents
                             return;
                         }
                     }
-
                 }
             }
             if (bigTester != null)
             {
-                if(bigTester.IsInCamera())
+                if (bigTester.IsInCamera())
                 {
                     bigTester.OnClick();
                 }
