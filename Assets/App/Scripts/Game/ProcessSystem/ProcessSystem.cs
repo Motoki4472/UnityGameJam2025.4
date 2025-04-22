@@ -121,11 +121,44 @@ namespace App.Game.ProcessSystem
             if (!ProcessStateHolder.IsPlaying) return;
             ReviewSystem.GenerateReviewComment(ReviewTime, isCorrect);
             if (isCorrect)
-            { ActiveUserHolder.AddMagnificationValue(); }
+            {
+                if (ReviewSystem.Star == 5)
+                {
+                    ActiveUserHolder.AddMagnificationValue();
+                    ActiveUserHolder.AddMagnificationValue();
+                    ActiveUserHolder.AddMagnificationValue();
+                }
+                else if (ReviewSystem.Star == 4)
+                {
+                    ActiveUserHolder.AddMagnificationValue();
+                    ActiveUserHolder.AddMagnificationValue();
+                }
+                else if (ReviewSystem.Star == 3)
+                {
+                    ActiveUserHolder.AddMagnificationValue();
+                }
+            }
             else
-            { ActiveUserHolder.SubtractMagnificationValue(); }
+            {
+                if (ReviewSystem.Star == 2)
+                {
+                    ActiveUserHolder.SubtractMagnificationValue();
+                }
+                else if (ReviewSystem.Star == 1)
+                {
+                    ActiveUserHolder.SubtractMagnificationValue();
+                    ActiveUserHolder.SubtractMagnificationValue();
+                }
+                else if (ReviewSystem.Star == 0)
+                {
+                    ActiveUserHolder.SubtractMagnificationValue();
+                    ActiveUserHolder.SubtractMagnificationValue();
+                    ActiveUserHolder.SubtractMagnificationValue();
+                }
+            }
+
             ReviewTime = 0f;
-            AmplificationAnimation.StartAnimation(AmplificationValue, isCorrect);
+            AmplificationAnimation.StartAnimation(AmplificationValue, isCorrect, ReviewSystem.Star);
             Debug.Log($"AmplificationValue: {AmplificationValue}");
             // ActiveUserに情報渡す
             ProcessStateHolder.Wait();
