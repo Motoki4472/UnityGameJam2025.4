@@ -1246,8 +1246,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: Epilogue
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 3c5f196423159e842b6913836befe7e9, type: 2}
+  m_sharedMaterial: {fileID: -4030964763898027532, guid: 3c5f196423159e842b6913836befe7e9, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -1383,7 +1383,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: -1469909079130451432, guid: 64f076fa0e705a247b693979cadd79ef, type: 3}
+  m_Sprite: {fileID: -1469909079130451432, guid: af6f5ffc669d84742be507573515d1a9, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -2277,6 +2277,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 1015027574}
+        m_TargetAssemblyTypeName: App.Common.Camera.SEController, Assembly-CSharp
+        m_MethodName: PlaySE
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1726048359
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2342,7 +2354,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 6504945077382945730, guid: 5cd124a4d7c627846a4ce701df1afd53, type: 2}
-  m_audioClip: {fileID: 8300000, guid: 10d0ff443e9bea84eae287eada0eb870, type: 3}
+  m_audioClip: {fileID: 0}
   m_Resource: {fileID: 8300000, guid: 10d0ff443e9bea84eae287eada0eb870, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
@@ -2875,8 +2887,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: "\u30D4\u30FC\u30AF\u30A2\u30AF\u30C6\u30A3\u30D6\u30E6\u30FC\u30B6\u30FC\u6570\n\n\n\u6700\u7D42\u30A2\u30AF\u30C6\u30A3\u30D6\u30E6\u30FC\u30B6\u30FC\u6570\n\n"
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 3c5f196423159e842b6913836befe7e9, type: 2}
+  m_sharedMaterial: {fileID: -4030964763898027532, guid: 3c5f196423159e842b6913836befe7e9, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -3082,6 +3094,18 @@ MonoBehaviour:
         m_TargetAssemblyTypeName: App.Common._SceneChange.SceneChange, Assembly-CSharp
         m_MethodName: ToTitle
         m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1015027574}
+        m_TargetAssemblyTypeName: App.Common.Camera.SEController, Assembly-CSharp
+        m_MethodName: PlaySE
+        m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
