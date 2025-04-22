@@ -14,7 +14,7 @@ namespace App.Common.Camera
 
         string debugScene = "#101";
 
-        void Awake()
+        void Start()
         {
             Scene current = SceneManager.GetActiveScene();
             if (staticBGMClips == null)

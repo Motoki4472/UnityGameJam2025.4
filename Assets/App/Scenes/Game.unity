@@ -5513,6 +5513,7 @@ MonoBehaviour:
   ReviewText: {fileID: 1779033036}
   reviewObject: {fileID: 799195275}
   targetPosition: 110
+  Star: 0
 --- !u!114 &1953541726
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5526,9 +5527,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   BGMController: {fileID: 1438781956}
-  LimitTime: 60
+  LimitTime: 10
   ProcessInterval: 0.1
-  InitialActiveUser: 100000
+  InitialActiveUser: 10000
   DefaultChangeValue: -10
   AmplificationValue: 1
   DemandSystem: {fileID: 1953541723}
@@ -5536,6 +5537,8 @@ MonoBehaviour:
   ActiveUserNumberDisplay: {fileID: 2016972924}
   LimitTimeDisplay: {fileID: 155162520}
   AmplificationAnimation: {fileID: 759512971}
+  SceneChange: {fileID: 1306718937}
+  goodornormalBorder: 1000000
 --- !u!4 &1953541727
 Transform:
   m_ObjectHideFlags: 0
