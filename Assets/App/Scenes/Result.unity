@@ -179,8 +179,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: "\u25CB\u25CBend"
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 3c5f196423159e842b6913836befe7e9, type: 2}
+  m_sharedMaterial: {fileID: -4030964763898027532, guid: 3c5f196423159e842b6913836befe7e9, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -979,7 +979,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   BGMList:
   - {fileID: 8300000, guid: 10d0ff443e9bea84eae287eada0eb870, type: 3}
-  - {fileID: 8300000, guid: 10d0ff443e9bea84eae287eada0eb870, type: 3}
+  - {fileID: 8300000, guid: 0cac43506e2a38544a81e5ec20131834, type: 3}
   AudioMixer: {fileID: 24100000, guid: 5cd124a4d7c627846a4ce701df1afd53, type: 2}
   BGMSource: {fileID: 1782027462}
 --- !u!114 &1015027576
@@ -2354,7 +2354,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 6504945077382945730, guid: 5cd124a4d7c627846a4ce701df1afd53, type: 2}
-  m_audioClip: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: 10d0ff443e9bea84eae287eada0eb870, type: 3}
   m_Resource: {fileID: 8300000, guid: 10d0ff443e9bea84eae287eada0eb870, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
