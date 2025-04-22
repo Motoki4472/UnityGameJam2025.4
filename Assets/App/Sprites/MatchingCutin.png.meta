@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: ad10b472940dab144b2181814a1767e0
+guid: 40888b0c19134ae4f9e9ba22b9ea67f7
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 1092971284679518021
-    second: testerButton_0
+      213: 6648095770573714603
+    second: MatchingCutin_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -97,7 +97,7 @@ TextureImporter:
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 4
-    buildTarget: WebGL
+    buildTarget: Android
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
@@ -110,7 +110,7 @@ TextureImporter:
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 4
-    buildTarget: Android
+    buildTarget: WebGL
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
@@ -139,13 +139,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: testerButton_0
+      name: MatchingCutin_0
       rect:
         serializedVersion: 2
         x: 0
-        y: 0
-        width: 476
-        height: 636
+        y: 24
+        width: 3840
+        height: 2068
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -154,8 +154,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 5476605b7930b2f00800000000000000
-      internalID: 1092971284679518021
+      spriteID: ba4b2d551e7c24c50800000000000000
+      internalID: 6648095770573714603
       vertices: []
       indices: 
       edges: []
@@ -173,8 +173,7 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable:
-      testerButton_0: 1092971284679518021
+    nameFileIdTable: {}
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

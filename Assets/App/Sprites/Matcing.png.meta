@@ -1,10 +1,22 @@
 fileFormatVersion: 2
-guid: ad10b472940dab144b2181814a1767e0
+guid: 3e4d6a8c564521c4eb6350e9792c14c1
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 1092971284679518021
-    second: testerButton_0
+      213: 7107700956493548769
+    second: Matcing_0
+  - first:
+      213: -4410990320481158728
+    second: Matcing_1
+  - first:
+      213: 3343745330350920769
+    second: Matcing_2
+  - first:
+      213: -5629467331228445312
+    second: Matcing_3
+  - first:
+      213: 6386011706304039149
+    second: Matcing_4
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -46,7 +58,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 2
+  spriteMode: 1
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -97,7 +109,7 @@ TextureImporter:
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 4
-    buildTarget: WebGL
+    buildTarget: Android
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
@@ -110,7 +122,7 @@ TextureImporter:
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 4
-    buildTarget: Android
+    buildTarget: WebGL
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
@@ -139,13 +151,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: testerButton_0
+      name: Matcing_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 476
-        height: 636
+        width: 2296
+        height: 1106
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -154,8 +166,96 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 5476605b7930b2f00800000000000000
-      internalID: 1092971284679518021
+      spriteID: 1ec80899c50a3a260800000000000000
+      internalID: 7107700956493548769
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Matcing_1
+      rect:
+        serializedVersion: 2
+        x: 2257
+        y: 219
+        width: 486
+        height: 689
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8b9b8088ca309c2c0800000000000000
+      internalID: -4410990320481158728
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Matcing_2
+      rect:
+        serializedVersion: 2
+        x: 2742
+        y: 267
+        width: 126
+        height: 593
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 14410fa79ae576e20800000000000000
+      internalID: 3343745330350920769
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Matcing_3
+      rect:
+        serializedVersion: 2
+        x: 2867
+        y: 280
+        width: 127
+        height: 568
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0855677d94d10e1b0800000000000000
+      internalID: -5629467331228445312
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Matcing_4
+      rect:
+        serializedVersion: 2
+        x: 2993
+        y: 293
+        width: 125
+        height: 543
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: de80db5ffcbaf9850800000000000000
+      internalID: 6386011706304039149
       vertices: []
       indices: 
       edges: []
@@ -164,7 +264,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 5e97eb03825dee720800000000000000
     internalID: 0
     vertices: []
     indices: 
@@ -174,7 +274,11 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      testerButton_0: 1092971284679518021
+      Matcing_0: 7107700956493548769
+      Matcing_1: -4410990320481158728
+      Matcing_2: 3343745330350920769
+      Matcing_3: -5629467331228445312
+      Matcing_4: 6386011706304039149
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
