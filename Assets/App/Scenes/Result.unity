@@ -978,8 +978,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   BGMList:
-  - {fileID: 8300000, guid: 10d0ff443e9bea84eae287eada0eb870, type: 3}
-  - {fileID: 8300000, guid: 10d0ff443e9bea84eae287eada0eb870, type: 3}
+  - {fileID: 8300000, guid: 0cac43506e2a38544a81e5ec20131834, type: 3}
+  - {fileID: 8300000, guid: 0cac43506e2a38544a81e5ec20131834, type: 3}
   AudioMixer: {fileID: 24100000, guid: 5cd124a4d7c627846a4ce701df1afd53, type: 2}
   BGMSource: {fileID: 1782027462}
 --- !u!114 &1015027576
@@ -2277,6 +2277,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 1015027574}
+        m_TargetAssemblyTypeName: App.Common.Camera.SEController, Assembly-CSharp
+        m_MethodName: PlaySE
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1726048359
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2342,7 +2354,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 6504945077382945730, guid: 5cd124a4d7c627846a4ce701df1afd53, type: 2}
-  m_audioClip: {fileID: 8300000, guid: 10d0ff443e9bea84eae287eada0eb870, type: 3}
+  m_audioClip: {fileID: 0}
   m_Resource: {fileID: 8300000, guid: 10d0ff443e9bea84eae287eada0eb870, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
@@ -3082,6 +3094,18 @@ MonoBehaviour:
         m_TargetAssemblyTypeName: App.Common._SceneChange.SceneChange, Assembly-CSharp
         m_MethodName: ToTitle
         m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1015027574}
+        m_TargetAssemblyTypeName: App.Common.Camera.SEController, Assembly-CSharp
+        m_MethodName: PlaySE
+        m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
