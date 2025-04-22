@@ -15,6 +15,7 @@ namespace App.Scripts.Game.Review
         [SerializeField] private GameObject reviewObject;
         [SerializeField] private int targetPosition = 110; // 移動先の位置
         private RectTransform targetTransform; // RectTransformコンポーネントを格納する変数
+        public int Star;
         private void Start()
         {
             _reviewComment = new _ReviewComment();
@@ -29,7 +30,6 @@ namespace App.Scripts.Game.Review
         }
         public void GenerateReviewComment(float TimeToMatching, bool isCorrect)
         {
-            int Star;
             string comment = "";
             ReviewComments.Clear();
             System.Random random = new System.Random();
