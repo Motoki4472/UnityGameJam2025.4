@@ -7,6 +7,8 @@ using App.Scripts.Game.Demand;
 using App.Scripts.Game.Review;
 using App.Scripts.Game.AmplificationDisplay;
 using System.Collections;
+using UnityEditor.SearchService;
+using App.Common._SceneChange;
 
 namespace App.Game.ProcessSystem
 {
@@ -26,6 +28,8 @@ namespace App.Game.ProcessSystem
         [SerializeField] private TMPro.TextMeshProUGUI ActiveUserNumberDisplay;
         [SerializeField] private TMPro.TextMeshProUGUI LimitTimeDisplay;
         [SerializeField] private AmplificationAnimation AmplificationAnimation;
+        [SerializeField] private SceneChange SceneChange;
+        [SerializeField] private int goodornormalBorder = 1000000;
         private GameObject Demand;
         private List<GameObject> ProfileList = new List<GameObject>();
         private List<GameObject> SurveyList = new List<GameObject>();
@@ -78,6 +82,24 @@ namespace App.Game.ProcessSystem
                     {
                         ProcessStateHolder.Wait();
                         ProcessStateHolder.Finish();
+
+                        // 結果シーンに遷移
+                        if (ActiveUserHolder.GetActiveUser() >= goodornormalBorder)
+                        {
+                            SceneChange.ToResult(_SceneChangeManager.EndName.GoodEnd, ActiveUserHolder.GetActiveUser(), ActiveUserHolder.GetPeakActiveUser());
+                        }
+                        else
+                        {
+                            SceneChange.ToResult(_SceneChangeManager.EndName.NormalEnd, ActiveUserHolder.GetActiveUser(), ActiveUserHolder.GetPeakActiveUser());
+                        }
+                    }
+                    if (ActiveUserHolder.GetActiveUser() <= 0)
+                    {
+                        ProcessStateHolder.Wait();
+                        ProcessStateHolder.Finish();
+
+                        // 結果シーンに遷移
+                        SceneChange.ToResult(_SceneChangeManager.EndName.BadEnd, 0, ActiveUserHolder.GetPeakActiveUser());
                     }
                 }
                 else if (ProcessStateHolder.IsPaused)
