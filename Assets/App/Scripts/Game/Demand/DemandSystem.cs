@@ -24,8 +24,10 @@ namespace App.Scripts.Game.Demand
         [SerializeField] private MiniTester  _miniTester; // MiniTesterのインスタンスを取得するための変数
         [SerializeField] private GameObject _ZodiacDocument;
         [SerializeField] private GameObject _canvas;
-        [SerializeField] private Vector3 _demandPosition = new Vector3(0, 0, 0); // ワールド座標での生成位置
-        [SerializeField] private Vector3 _profilePosition = new Vector3(0, 0, 0); // ワールド座標での生成位置
+        [SerializeField] private GameObject _demandAnchor;
+        [SerializeField] private GameObject _profileAnchor;
+        private Vector3 _demandPosition; // ワールド座標での生成位置
+        private Vector3 _profilePosition; // ワールド座標での生成位置
         private List<GameObject> ProfilePrefabList = new List<GameObject>();
         private List<GameObject> SurveyPrefabList = new List<GameObject>();
 
@@ -39,6 +41,12 @@ namespace App.Scripts.Game.Demand
             _generateProfile = new _GenerateProfile();
             _generateMistakeProfile = new _GenerateMistakeProfile();
             _surveyList = new _SurveyList();
+            RectTransform demandRect = _demandAnchor.GetComponent<RectTransform>();
+            RectTransform profileRect = _profileAnchor.GetComponent<RectTransform>();
+
+            // 生成位置を取得
+            _demandPosition = _demandAnchor.transform.position;
+            _profilePosition = _profileAnchor.transform.position;
             // DemandPrefabの生成
             _DemandParameter demandParameter = _generateDemand.GenerateDemandParameter(random.Next(0, 4));
             GameObject demandPrefabInstance = Instantiate(_demandPrefab, Vector3.zero, Quaternion.identity);
