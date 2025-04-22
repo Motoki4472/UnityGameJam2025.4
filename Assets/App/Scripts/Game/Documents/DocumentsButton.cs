@@ -18,7 +18,7 @@ namespace App.Scripts.Game.Documents
                 if (document != null)
                 {
                     DocumentsAnimation animation = document.GetComponent<DocumentsAnimation>();
-                    if (animation != null && animation.IsInCamera())
+                    if (animation != null && animation.IsInCamera() && animation.IsAnimating() == false)
                     {
                         animation.Down(); // IsInCamera が true の場合に Down を実行
                         if (documentsPrefabs.IndexOf(document) == documentIndex)
