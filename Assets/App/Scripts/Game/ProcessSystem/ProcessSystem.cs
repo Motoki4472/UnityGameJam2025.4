@@ -119,10 +119,10 @@ namespace App.Game.ProcessSystem
             else
             { ActiveUserHolder.SubtractMagnificationValue(); }
             AmplificationAnimation.StartAnimation(AmplificationValue, isCorrect);
+            Debug.Log($"AmplificationValue: {AmplificationValue}");
             // ActiveUserに情報渡す
             ProcessStateHolder.Wait();
             ProcessStateHolder.StartAnimationMatched();
-
         }
 
     }
