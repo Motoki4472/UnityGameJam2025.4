@@ -1,9 +1,11 @@
-using System.Diagnostics;
 using UnityEngine;
-using TMPpro;
+using TMPro;
+using System.Collections;
 using App.Game.ProcessSystem;
 using App.Scripts.Game.Profile;
 using App.Scripts.Game.Documents;
+using System.Collections.Generic;
+
 
 namespace App.Scripts.Game.Tester
 {
@@ -11,18 +13,19 @@ namespace App.Scripts.Game.Tester
     {
         [SerializeField] private TextMeshProUGUI JudgementText;
         [SerializeField] private ProcessSystem _processSystem;
-        private GameObject[] profileList;
+        private List<GameObject> profileList;
         void Start()
         {
-            JudgementText.SetActive(false);
-            profileList = _processSystem.GetProfileList();
+            JudgementText.text = "";
         }
 
-        public void JudgementButtonClick()
+        public void OnJudgementButtonClick()
         {
+            profileList = _processSystem.GetProfileList();
             foreach (var profile in profileList)
             {
-                if (profile.GetComponent<DocumentsAnimation>().isInCamera)
+                Debug.Log("JudgementButtonClick");
+                if (profile.GetComponent<DocumentsAnimation>().IsInCamera())
                 {
                     StartCoroutine(DetectTextAnimation(profile));
                 }
@@ -31,7 +34,6 @@ namespace App.Scripts.Game.Tester
 
         private IEnumerator DetectTextAnimation(GameObject profile)
         {
-            JudgementText.SetActive(true);
             JudgementText.text = "検出中";
             yield return new WaitForSeconds(0.5f);
             JudgementText.text = "検出中.";
@@ -41,17 +43,16 @@ namespace App.Scripts.Game.Tester
             JudgementText.text = "検出中...";
             yield return new WaitForSeconds(0.5f);
             JudgementText.text = "検出完了";
-            yield return new WaitForSeconds(0.5f);
-            if(profile.ProfilePrefab.IsPhotoEffect())
+            yield return new WaitForSeconds(4f);
+            if (profile.GetComponent<ProfilePrefab>().IsPhotoEffect())
             {
-                JudgementText.text = "加工有"
+                JudgementText.text = "加工有";
             }
             else
             {
                 JudgementText.text = "加工無";
             }
-            yield return new WaitForSeconds(4f);
-            JudgementText.SetActive(false);
+            yield return new WaitForSeconds(6f);
             JudgementText.text = "";
         }
     }
