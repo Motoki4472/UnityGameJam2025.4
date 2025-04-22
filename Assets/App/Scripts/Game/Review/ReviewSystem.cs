@@ -1,6 +1,7 @@
 using UnityEngine;
 using System.Collections.Generic;
 using TMPro;
+using DG.Tweening;
 
 namespace App.Scripts.Game.Review
 {
@@ -11,9 +12,20 @@ namespace App.Scripts.Game.Review
         [SerializeField] private float _Star2Time = 25f;
         private List<string> ReviewComments = new List<string>();
         [SerializeField] private TextMeshProUGUI ReviewText;
+        [SerializeField] private GameObject reviewObject;
+        [SerializeField] private int targetPosition = 110; // 移動先の位置
+        private RectTransform targetTransform; // RectTransformコンポーネントを格納する変数
         private void Start()
         {
             _reviewComment = new _ReviewComment();
+            if (reviewObject != null)
+            {
+                targetTransform = reviewObject.GetComponent<RectTransform>();
+            }
+            else
+            {
+                Debug.LogWarning("reviewObject が設定されていません");
+            }
         }
         public void GenerateReviewComment(float TimeToMatching, bool isCorrect)
         {
@@ -66,7 +78,18 @@ namespace App.Scripts.Game.Review
             comment += "\n" + ReviewComments[random.Next(0, ReviewComments.Count)];
 
             ReviewText.text = comment;
+            PlayReviewAnimation();
+        }
+        private void PlayReviewAnimation()
+        {
+            Sequence sequence = DOTween.Sequence();
 
+            sequence
+                .Append(targetTransform.DOMoveY(targetPosition, 1f)) // 1秒で指定位置へ
+                .AppendInterval(3f)                                  // 3秒間待機
+                .Append(targetTransform.DOMoveY(-targetPosition, 1f)); // 1秒で戻る
+            
+            sequence.Play();
         }
     }
 }
