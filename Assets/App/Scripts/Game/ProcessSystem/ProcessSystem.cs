@@ -22,6 +22,7 @@ namespace App.Game.ProcessSystem
         [SerializeField] private GameObject DemandSystem;
         [SerializeField] private ReviewSystem ReviewSystem;
         [SerializeField] private TMPro.TextMeshProUGUI ActiveUserNumberDisplay;
+        [SerializeField] private TMPro.TextMeshProUGUI LimitTimeDisplay;
         private GameObject Demand;
         private List<GameObject> ProfileList = new List<GameObject>();
         private List<GameObject> SurveyList = new List<GameObject>();
@@ -48,6 +49,11 @@ namespace App.Game.ProcessSystem
             {
                 ActiveUserNumberDisplay.text = ActiveUserHolder.GetActiveUser().ToString();
             }
+            if (LimitTimeDisplay != null)
+            {
+                LimitTimeDisplay.text = LimitTimeHolder.GetLimitTime().ToString("F1");
+            }
+
             if (elapsedTime >= interval)
             {
                 elapsedTime -= interval;
