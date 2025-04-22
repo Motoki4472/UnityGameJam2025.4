@@ -2,6 +2,7 @@ using System.Diagnostics;
 using UnityEngine;
 using App.Game.ProcessSystem;
 using App.Scripts.Game.Profile;
+using App.Scripts.Game.Documents;
 
 namespace App.Scripts.Game.Tester
 {
@@ -9,16 +10,22 @@ namespace App.Scripts.Game.Tester
     {
         [SerializeField] private GameObject JudgementText;
         [SerializeField] private ProcessSystem _processSystem;
-        private _ProfileParameter ProfileParameter;
+        private GameObject[] profileList;
+        void Start()
+        {
+            JudgementText.SetActive(false);
+            profileList = _processSystem.GetProfileList();
+        }
         
         public void JudgementButtonClick()
         {
-            if (ProfileParameter.GetIsPhotoEffect())
+            foreach (var profile in profileList)
             {
-                
-            }
-            else
-            {
+                if(profile.GetComponent<DocumentsAnimation>().isInCamera)
+                {
+                    JudgementText.SetActive(true);
+                    
+                }
             }
         }
     }
