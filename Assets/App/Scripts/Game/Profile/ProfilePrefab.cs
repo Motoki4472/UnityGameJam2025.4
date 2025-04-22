@@ -30,16 +30,15 @@ namespace App.Scripts.Game.Profile
                 Debug.LogError("ProfileParameter is null.");
                 return;
             }
+            _nameText.text = "名前:" + profileParameter.GetName();
+            _genderText.text = "性別:" + profileParameter.GetGender();
+            _ageText.text = "年齢:" + profileParameter.GetAge();
+            _birthdateText.text = "誕生日:" + profileParameter.GetBirthdate();
+            _backgroundText.text = "来歴:" + profileParameter.GetBackground();
+            _zodiacText.text = "干支:" + profileParameter.GetZodiac();
+            _mbtiText.text = "MBTI:" + profileParameter.GetMbti();
+            _regionText.text = "出身:" + profileParameter.GetRegion();
 
-            // テキストを設定
-            _nameText.text = profileParameter.GetName();
-            _genderText.text = profileParameter.GetGender();
-            _ageText.text = profileParameter.GetAge();
-            _birthdateText.text = profileParameter.GetBirthdate();
-            _backgroundText.text = profileParameter.GetBackground();
-            _zodiacText.text = profileParameter.GetZodiac();
-            _mbtiText.text = profileParameter.GetMbti();
-            _regionText.text = profileParameter.GetRegion();
             _isCorrect = profileParameter.GetIsCorrect();
             _isPhotoEffect = profileParameter.GetIsPhotoEffect();
             _isBackgroundFraud = profileParameter.GetIsBackgroundFraud();
@@ -56,6 +55,11 @@ namespace App.Scripts.Game.Profile
 
         public void Match()
         {
+            if (_processSystem == null)
+            {
+                Debug.LogError("ProcessSystem is not assigned.");
+                return;
+            }
             _processSystem.Match(_isCorrect);
         }
 

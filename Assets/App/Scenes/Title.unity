@@ -1039,10 +1039,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0cd44c1031e13a943bb63640046fad76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_UiScaleMode: 0
+  m_UiScaleMode: 1
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
-  m_ReferenceResolution: {x: 800, y: 600}
+  m_ReferenceResolution: {x: 1920, y: 1080}
   m_ScreenMatchMode: 0
   m_MatchWidthOrHeight: 0
   m_PhysicalUnit: 3
@@ -1790,8 +1790,8 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 6504945077382945730, guid: 5cd124a4d7c627846a4ce701df1afd53, type: 2}
-  m_audioClip: {fileID: 8300000, guid: 0cac43506e2a38544a81e5ec20131834, type: 3}
-  m_Resource: {fileID: 8300000, guid: 0cac43506e2a38544a81e5ec20131834, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 10d0ff443e9bea84eae287eada0eb870, type: 3}
+  m_Resource: {fileID: 8300000, guid: 10d0ff443e9bea84eae287eada0eb870, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
@@ -2514,10 +2514,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0cd44c1031e13a943bb63640046fad76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_UiScaleMode: 0
+  m_UiScaleMode: 1
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
-  m_ReferenceResolution: {x: 800, y: 600}
+  m_ReferenceResolution: {x: 1920, y: 1080}
   m_ScreenMatchMode: 0
   m_MatchWidthOrHeight: 0
   m_PhysicalUnit: 3
@@ -2625,7 +2625,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   BGMList:
-  - {fileID: 8300000, guid: 0cac43506e2a38544a81e5ec20131834, type: 3}
+  - {fileID: 8300000, guid: 10d0ff443e9bea84eae287eada0eb870, type: 3}
   - {fileID: 8300000, guid: 0cac43506e2a38544a81e5ec20131834, type: 3}
   AudioMixer: {fileID: 24100000, guid: 5cd124a4d7c627846a4ce701df1afd53, type: 2}
   BGMSource: {fileID: 1479863251}

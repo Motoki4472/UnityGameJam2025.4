@@ -46,6 +46,7 @@ namespace App.Scripts.Game.Demand
             demandPrefabInstance.transform.position = _demandPosition; // ワールド座標で移動
             DemandPrefab demandPrefab = demandPrefabInstance.GetComponent<DemandPrefab>();
             demandPrefab.SetDemandParameter(demandParameter);
+            _processSystem.SetDemand(demandPrefabInstance);
 
             // ProfilePrefabの生成
             for (int i = 0; i < ProfileParameter.Length; i++)
@@ -61,6 +62,7 @@ namespace App.Scripts.Game.Demand
                 profilePrefabInstance.transform.position = _profilePosition; // ワールド座標で移動
                 ProfilePrefab profilePrefab = profilePrefabInstance.GetComponent<ProfilePrefab>();
                 profilePrefab.SetProfile(ProfileParameter[i]);
+                profilePrefab.SetProcessSystem(_processSystem);
                 ProfilePrefabList.Add(profilePrefabInstance);
             }
 

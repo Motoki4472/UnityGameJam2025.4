@@ -1,5 +1,6 @@
 using UnityEngine;
 using System.Collections.Generic;
+using System.Text.RegularExpressions;
 using System.Linq;
 using App.Scripts.Game.Data;
 using App.Scripts.Game.Profile;
@@ -64,7 +65,7 @@ namespace App.Scripts.Game.Documents
             int graduationYear = birthDateTime.Year + graduationAge;
             int currentAge = System.DateTime.Now.Year - birthDateTime.Year;
 
-            SurveyTitle = $"{graduationYear}年度 {schoolName} 卒業者一覧" + (currentAge < graduationAge ? " (予定)" : "");
+            SurveyTitle = $"{graduationYear}年度\n  {schoolName}\n  卒業者一覧" + (currentAge < graduationAge ? " (予定)" : "");
             return SurveyTitle;
         }
 
@@ -105,9 +106,14 @@ namespace App.Scripts.Game.Documents
         {
             return SurveyTitle;
         }
+
+
         public string GetStudentName()
         {
             List<string> studentArray = StudentList.ToList();
+
+            // 最大の名前の幅を取得（全角文字は2、半角文字は1として計算）
+            int maxNameWidth = studentArray.Max(name => GetStringWidth(name));
 
             // ペアごとにフォーマット
             string formattedList = "";
@@ -115,10 +121,32 @@ namespace App.Scripts.Game.Documents
             {
                 string first = studentArray[i];
                 string second = (i + 1 < studentArray.Count) ? studentArray[i + 1] : "";
-                formattedList += $"{first}     {second}\n"; // 空白5つで区切り、改行を追加
+
+                // 名前の幅に応じてスペースを調整
+                int padding = maxNameWidth - GetStringWidth(first) + 5; // 空白5つを追加
+                formattedList += $"{first}{new string(' ', padding)}{second}\n";
             }
 
             return formattedList;
+        }
+
+        // 文字列の幅を計算するヘルパーメソッド
+        private int GetStringWidth(string input)
+        {
+            int width = 0;
+            foreach (char c in input)
+            {
+                // Unicodeカテゴリを使用して全角文字を判定
+                if (Regex.IsMatch(c.ToString(), @"\p{IsCJKUnifiedIdeographs}|\p{IsHiragana}|\p{IsKatakana}"))
+                {
+                    width += 2; // 全角文字は幅2
+                }
+                else
+                {
+                    width += 1; // 半角文字は幅1
+                }
+            }
+            return width;
         }
     }
 }
