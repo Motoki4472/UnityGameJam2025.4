@@ -6,6 +6,7 @@ using App.Common.Camera;
 using App.Scripts.Game.Demand;
 using App.Scripts.Game.Review;
 using App.Scripts.Game.AmplificationDisplay;
+using System.Collections;
 
 namespace App.Game.ProcessSystem
 {
@@ -35,8 +36,14 @@ namespace App.Game.ProcessSystem
             ProcessStateHolder = new _ProcessStateHolder(DemandSystem, this);
             LimitTimeHolder.SetLimitTime(LimitTime);
             ActiveUserHolder.SetInitialActiveUser(InitialActiveUser);
-            BGMController.PlayGameBGM();
+            StartCoroutine(DelayedBGMStart());
             ProcessStateHolder.StartAnimationStarting();
+        }
+
+        IEnumerator DelayedBGMStart()
+        {
+            yield return new WaitForSeconds(0.5f);
+            BGMController.PlayGameBGM();
         }
 
         void FixedUpdate()
@@ -113,17 +120,16 @@ namespace App.Game.ProcessSystem
 
             if (!ProcessStateHolder.IsPlaying) return;
             ReviewSystem.GenerateReviewComment(ReviewTime, isCorrect);
-            ReviewTime = 0f;
             if (isCorrect)
             { ActiveUserHolder.AddMagnificationValue(); }
             else
             { ActiveUserHolder.SubtractMagnificationValue(); }
+            ReviewTime = 0f;
             AmplificationAnimation.StartAnimation(AmplificationValue, isCorrect);
             Debug.Log($"AmplificationValue: {AmplificationValue}");
             // ActiveUserに情報渡す
             ProcessStateHolder.Wait();
             ProcessStateHolder.StartAnimationMatched();
         }
-
     }
 }

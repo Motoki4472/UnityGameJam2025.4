@@ -12,7 +12,7 @@ namespace App.Common.Camera
         [SerializeField] private AudioSource BGMSource = null;
         private static AudioClip[] staticBGMClips = null;
 
-        string debugScene = "";
+        string debugScene = "#101";
 
         void Awake()
         {
