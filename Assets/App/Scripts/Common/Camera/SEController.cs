@@ -27,6 +27,7 @@ namespace App.Common.Camera
 
         public void PlaySE(int clip)
         {
+            Debug.Log($"PlaySE: {clip}");
             SESource.clip = staticSEClips[clip];
             SESource.Play();
         }
