@@ -113,7 +113,7 @@ namespace App.Scripts.Game.Documents
             List<string> studentArray = StudentList.ToList();
 
             // 最大の名前の幅を取得（全角文字は2、半角文字は1として計算）
-            int maxNameWidth = studentArray.Max(name => GetStringWidth(name));
+            int maxNameWidth = 14;
 
             // ペアごとにフォーマット
             string formattedList = "";
@@ -123,7 +123,7 @@ namespace App.Scripts.Game.Documents
                 string second = (i + 1 < studentArray.Count) ? studentArray[i + 1] : "";
 
                 // 名前の幅に応じてスペースを調整
-                int padding = maxNameWidth - GetStringWidth(first) + 5; // 空白5つを追加
+                int padding = maxNameWidth - GetStringWidth(first);
                 formattedList += $"{first}{new string(' ', padding)}{second}\n";
             }
 
