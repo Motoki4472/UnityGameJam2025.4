@@ -5682,7 +5682,7 @@ MonoBehaviour:
   LimitTimeDisplay: {fileID: 155162520}
   AmplificationAnimation: {fileID: 759512971}
   SceneChange: {fileID: 1306718937}
-  goodornormalBorder: 1000000
+  goodorNormalBorder: 100000
 --- !u!4 &1953541727
 Transform:
   m_ObjectHideFlags: 0

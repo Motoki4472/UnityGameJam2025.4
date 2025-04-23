@@ -31,12 +31,14 @@ namespace App.Game.ProcessSystem
         [SerializeField] private TMPro.TextMeshProUGUI LimitTimeDisplay;
         [SerializeField] private AmplificationAnimation AmplificationAnimation;
         [SerializeField] private SceneChange SceneChange;
-        [SerializeField] private int goodornormalBorder = 1000000;
+        [SerializeField] private int goodorNormalBorder = 1000000;
+        [SerializeField] private int mistakeBorder = 5;
         private GameObject Demand;
         private List<GameObject> ProfileList = new List<GameObject>();
         private List<GameObject> SurveyList = new List<GameObject>();
         private float elapsedTime = 0f;
         private float ReviewTime = 0f;
+        private int mistakeCount = 0;
         void Start()
         {
             ProcessStateHolder = new _ProcessStateHolder(DemandSystem, this,CutInAnimation);
@@ -86,7 +88,7 @@ namespace App.Game.ProcessSystem
                         ProcessStateHolder.Finish();
 
                         // 結果シーンに遷移
-                        if (ActiveUserHolder.GetActiveUser() >= goodornormalBorder)
+                        if (ActiveUserHolder.GetActiveUser() >= goodorNormalBorder)
                         {
                             SceneChange.ToResult(_SceneChangeManager.EndName.GoodEnd, ActiveUserHolder.GetActiveUser(), ActiveUserHolder.GetPeakActiveUser());
                         }
@@ -95,11 +97,10 @@ namespace App.Game.ProcessSystem
                             SceneChange.ToResult(_SceneChangeManager.EndName.NormalEnd, ActiveUserHolder.GetActiveUser(), ActiveUserHolder.GetPeakActiveUser());
                         }
                     }
-                    if (ActiveUserHolder.GetActiveUser() <= 0)
+                    if (ActiveUserHolder.GetActiveUser() <= 0 || mistakeCount >= mistakeBorder)
                     {
                         ProcessStateHolder.Wait();
                         ProcessStateHolder.Finish();
-
                         // 結果シーンに遷移
                         SceneChange.ToResult(_SceneChangeManager.EndName.BadEnd, 0, ActiveUserHolder.GetPeakActiveUser());
                     }
@@ -164,6 +165,7 @@ namespace App.Game.ProcessSystem
             }
             else
             {
+                mistakeCount++;
                 if (ReviewSystem.Star == 2)
                 {
                     ActiveUserHolder.SubtractMagnificationValue();

@@ -35,12 +35,12 @@ namespace App.Result.End
                             _epilogueTextTMP.text = endTextData.GetEpilogueText(0);
                             endIlustImage.sprite = _endSprites[0];
                             break;
-                        case _SceneChangeManager.EndName.GoodEnd:
+                        case _SceneChangeManager.EndName.NormalEnd:
                             _endTextTMP.text = endTextData.GetEndText(1);
                             _epilogueTextTMP.text = endTextData.GetEpilogueText(1);
                             endIlustImage.sprite = _endSprites[1];
                             break;
-                        case _SceneChangeManager.EndName.NormalEnd:
+                        case _SceneChangeManager.EndName.GoodEnd:
                             _endTextTMP.text = endTextData.GetEndText(2);
                             _epilogueTextTMP.text = endTextData.GetEpilogueText(2);
                             endIlustImage.sprite = _endSprites[2];
