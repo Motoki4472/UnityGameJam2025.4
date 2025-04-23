@@ -1310,6 +1310,7 @@ MonoBehaviour:
   - {fileID: 5545074057135662542, guid: 36c90a9ba1db7574e81a1bbb1bf9aafe, type: 3}
   - {fileID: -3428672953092550586, guid: 0b1d51bc68223a847ba7d61e2f9fb4f6, type: 3}
   - {fileID: 546169645079054871, guid: ec077d5b55d332340898f94d320e5099, type: 3}
+  - {fileID: 4127193398807295954, guid: 3aa3454b091b13743a2465357329b8f3, type: 3}
   tutorialImageDisplay: {fileID: 1891634032}
   nextButton: {fileID: 1606493849}
   previousButton: {fileID: 1861519337}
