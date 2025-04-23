@@ -37,16 +37,16 @@ namespace App.Scripts.Game.Profile
             string MBTI = GetMBTIFromList(SplitStringToList(Parameter.GetMbti()));
             string Region = GenerateRegion(SplitStringToList(Parameter.GetRegion()));
 
-            Debug.Log($"プロフィール生成結果:");
-            Debug.Log($"ImageId: {string.Join(", ", ImageId)}");
-            Debug.Log($"Name: {Name}");
-            Debug.Log($"Gender: {Gender}");
-            Debug.Log($"Birthdate: {Birthdate}");
-            Debug.Log($"Age: {Age}");
-            Debug.Log($"Background: {Background}");
-            Debug.Log($"Zodiac: {Zodiac}");
-            Debug.Log($"MBTI: {MBTI}");
-            Debug.Log($"Region: {Region}");
+            //Debug.Log($"プロフィール生成結果:");
+            //Debug.Log($"ImageId: {string.Join(", ", ImageId)}");
+            //Debug.Log($"Name: {Name}");
+            //Debug.Log($"Gender: {Gender}");
+            //Debug.Log($"Birthdate: {Birthdate}");
+            //Debug.Log($"Age: {Age}");
+            //Debug.Log($"Background: {Background}");
+            //Debug.Log($"Zodiac: {Zodiac}");
+            //Debug.Log($"MBTI: {MBTI}");
+            //Debug.Log($"Region: {Region}");
 
             return new _ProfileParameter(ImageId, Name, Gender, Birthdate, Age, Background, Zodiac, MBTI, Region);
         }

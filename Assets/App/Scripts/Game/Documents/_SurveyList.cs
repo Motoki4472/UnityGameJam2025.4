@@ -23,10 +23,10 @@ namespace App.Scripts.Game.Documents
             SetSurveyTitle(profileParameter); // 戻り値を期待せず直接呼び出す
             GeneratePersonName();
 
-            Debug.Log($"Generated Student List: {string.Join(", ", StudentList)}");
-            Debug.Log($"Graduation Year: {GraduationYear}");
-            Debug.Log($"Graduation School: {GraduationSchool}");
-            Debug.Log($"Survey Title: {SurveyTitle}");
+            //Debug.Log($"Generated Student List: {string.Join(", ", StudentList)}");
+            //Debug.Log($"Graduation Year: {GraduationYear}");
+            //Debug.Log($"Graduation School: {GraduationSchool}");
+            //Debug.Log($"Survey Title: {SurveyTitle}");
         }
 
         private string CalculateGraduationYear(string birthdate, string schoolName)
@@ -113,7 +113,7 @@ namespace App.Scripts.Game.Documents
             List<string> studentArray = StudentList.ToList();
 
             // 最大の名前の幅を取得（全角文字は2、半角文字は1として計算）
-            int maxNameWidth = 16;
+            int maxNameWidth = 14;
 
             // ペアごとにフォーマット
             string formattedList = "";

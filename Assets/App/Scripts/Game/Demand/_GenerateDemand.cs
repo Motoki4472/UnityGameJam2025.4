@@ -28,12 +28,12 @@ namespace App.Scripts.Game.Demand
                 parameters[index] = "気にしない"; // 選択されたパラメータを「気にしない」に置き換える
             }
 
-            Debug.Log($"外見: {parameters[0]}");
-            Debug.Log($"年齢: {parameters[1]}");
-            Debug.Log($"背景: {parameters[2]}");
-            Debug.Log($"性別: {parameters[3]}");
-            Debug.Log($"MBTI: {parameters[4]}");
-            Debug.Log($"地域: {parameters[5]}");
+            //Debug.Log($"外見: {parameters[0]}");
+            //Debug.Log($"年齢: {parameters[1]}");
+            //Debug.Log($"背景: {parameters[2]}");
+            //Debug.Log($"性別: {parameters[3]}");
+            //Debug.Log($"MBTI: {parameters[4]}");
+            //Debug.Log($"地域: {parameters[5]}");
             
 
             return new _DemandParameter(parameters[0], parameters[1], parameters[2], parameters[3], parameters[4], parameters[5]);

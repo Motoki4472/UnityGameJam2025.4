@@ -55,19 +55,19 @@ namespace App.Scripts.Game.Profile
 
             profileParameter = MistakeFunctions[mistakeId](demandParameter, profileParameter);
             profileParameter.SetIsCorrect(false); // プロフィールが正しくないことを示すフラグを設定
-            Debug.Log($"Mistake applied: {mistakeId}"); // デバッグ用ログ
+            //Debug.Log($"Mistake applied: {mistakeId}"); // デバッグ用ログ
 
 
-            Debug.Log($"偽プロフィール生成結果:");
-            Debug.Log($"ImageId: {string.Join(", ", profileParameter.GetImageId())}");
-            Debug.Log($"Name: {profileParameter.GetName()}");
-            Debug.Log($"Gender: {profileParameter.GetGender()}");
-            Debug.Log($"Birthdate: {profileParameter.GetBirthdate()}");
-            Debug.Log($"Age: {profileParameter.GetAge()}");
-            Debug.Log($"Background: {profileParameter.GetBackground()}");
-            Debug.Log($"Zodiac: {profileParameter.GetZodiac()}");
-            Debug.Log($"MBTI: {profileParameter.GetMbti()}");
-            Debug.Log($"Region: {profileParameter.GetRegion()}");
+            //Debug.Log($"偽プロフィール生成結果:");
+            //Debug.Log($"ImageId: {string.Join(", ", profileParameter.GetImageId())}");
+            //Debug.Log($"Name: {profileParameter.GetName()}");
+            //Debug.Log($"Gender: {profileParameter.GetGender()}");
+            //Debug.Log($"Birthdate: {profileParameter.GetBirthdate()}");
+            //Debug.Log($"Age: {profileParameter.GetAge()}");
+            //Debug.Log($"Background: {profileParameter.GetBackground()}");
+            //Debug.Log($"Zodiac: {profileParameter.GetZodiac()}");
+            //Debug.Log($"MBTI: {profileParameter.GetMbti()}");
+            //Debug.Log($"Region: {profileParameter.GetRegion()}");
 
             return profileParameter;
         }
@@ -192,7 +192,7 @@ namespace App.Scripts.Game.Profile
 
         private _ProfileParameter ApplyGenderMistake(_DemandParameter demandParameter, _ProfileParameter profileParameter)
         {
-            Debug.Log("Applying Gender Mistake");
+            //Debug.Log("Applying Gender Mistake");
 
             string currentGender = profileParameter.GetGender();
             string newGender = currentGender == "男性" ? "女性" : "男性";
@@ -258,7 +258,7 @@ namespace App.Scripts.Game.Profile
 
         private _ProfileParameter ApplyMbtiMistake(_DemandParameter demandParameter, _ProfileParameter profileParameter)
         {
-            Debug.Log("Applying MBTI Mistake");
+            //Debug.Log("Applying MBTI Mistake");
 
             System.Random random = new System.Random();
             _MBTI mbti = new _MBTI();
@@ -296,7 +296,7 @@ namespace App.Scripts.Game.Profile
 
         private _ProfileParameter ApplyRegionMistake(_DemandParameter demandParameter, _ProfileParameter profileParameter)
         {
-            Debug.Log("Applying Region Mistake");
+            //Debug.Log("Applying Region Mistake");
 
             System.Random random = new System.Random();
             _Region _region = new _Region();
