@@ -1,9 +1,9 @@
 using UnityEngine;
 using DG.Tweening;
 
-namespace App.Scripts.Game.Cutin
+namespace App.Scripts.Game.CutIn
 {
-    public class CutinAnimation : MonoBehaviour
+    public class CutInAnimation : MonoBehaviour
     {
         [SerializeField] private GameObject cutinObject; // カットインのメインオブジェクト
         [SerializeField] private GameObject cutinBuckGround; // カットインの背景オブジェクト

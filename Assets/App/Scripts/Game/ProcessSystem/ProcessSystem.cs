@@ -9,6 +9,7 @@ using App.Scripts.Game.AmplificationDisplay;
 using System.Collections;
 using UnityEditor.SearchService;
 using App.Common._SceneChange;
+using App.Scripts.Game.CutIn;
 
 namespace App.Game.ProcessSystem
 {
@@ -25,6 +26,7 @@ namespace App.Game.ProcessSystem
         [SerializeField] private int AmplificationValue = 1;
         [SerializeField] private GameObject DemandSystem;
         [SerializeField] private ReviewSystem ReviewSystem;
+        [SerializeField] private CutInAnimation CutInAnimation;
         [SerializeField] private TMPro.TextMeshProUGUI ActiveUserNumberDisplay;
         [SerializeField] private TMPro.TextMeshProUGUI LimitTimeDisplay;
         [SerializeField] private AmplificationAnimation AmplificationAnimation;
@@ -37,7 +39,7 @@ namespace App.Game.ProcessSystem
         private float ReviewTime = 0f;
         void Start()
         {
-            ProcessStateHolder = new _ProcessStateHolder(DemandSystem, this);
+            ProcessStateHolder = new _ProcessStateHolder(DemandSystem, this,CutInAnimation);
             LimitTimeHolder.SetLimitTime(LimitTime);
             ActiveUserHolder.SetInitialActiveUser(InitialActiveUser);
             StartCoroutine(DelayedBGMStart());
