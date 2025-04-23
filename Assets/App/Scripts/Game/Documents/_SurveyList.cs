@@ -113,7 +113,7 @@ namespace App.Scripts.Game.Documents
             List<string> studentArray = StudentList.ToList();
 
             // 最大の名前の幅を取得（全角文字は2、半角文字は1として計算）
-            int maxNameWidth = 14;
+            int maxNameWidth = 16;
 
             // ペアごとにフォーマット
             string formattedList = "";
