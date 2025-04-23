@@ -4614,6 +4614,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   settingCanvas: {fileID: 1552900023}
+  tutorialCanvas: {fileID: 0}
+  tutorialImages: []
+  tutorialImageDisplay: {fileID: 0}
+  nextButton: {fileID: 0}
+  previousButton: {fileID: 0}
+  specialImage1: {fileID: 0}
+  specialImage2: {fileID: 0}
 --- !u!4 &1457215967
 Transform:
   m_ObjectHideFlags: 0
@@ -5655,7 +5662,7 @@ MonoBehaviour:
   _Star2Time: 25
   ReviewText: {fileID: 1779033036}
   reviewObject: {fileID: 799195275}
-  targetPosition: 110
+  targetPosition: 60
   Star: 0
 --- !u!114 &1953541726
 MonoBehaviour:
@@ -5683,6 +5690,7 @@ MonoBehaviour:
   AmplificationAnimation: {fileID: 759512971}
   SceneChange: {fileID: 1306718937}
   goodorNormalBorder: 100000
+  mistakeBorder: 5
 --- !u!4 &1953541727
 Transform:
   m_ObjectHideFlags: 0
