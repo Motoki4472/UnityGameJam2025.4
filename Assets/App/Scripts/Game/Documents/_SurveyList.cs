@@ -93,7 +93,7 @@ namespace App.Scripts.Game.Documents
         {
             _PersonName personName = new _PersonName();
             System.Random random = new System.Random();
-            int nameCount = random.Next(19, 30);
+            int nameCount = random.Next(19, 25);
 
             while (StudentList.Count < nameCount)
             {

@@ -50,7 +50,6 @@ namespace App.Scripts.Game.Profile
             if (demandParameter.GetBackground() == "気にしない" && MistakeIds.Contains(4)) MistakeIds.Remove(4);
             if (demandParameter.GetMbti() == "気にしない" && MistakeIds.Contains(5)) MistakeIds.Remove(5);
             if (demandParameter.GetRegion() == "気にしない" && MistakeIds.Contains(6)) MistakeIds.Remove(6);
-            if (demandParameter.GetAge() == "気にしない" && MistakeIds.Contains(2)) MistakeIds.Remove(7);
 
 
             // 気にしないになっていない項目と重複しないmistakeIdを生成
