@@ -21,7 +21,8 @@ namespace App.Scripts.Game.Profile
                 ApplyGenderMistake,
                 ApplyBackgroundMistake,
                 ApplyMbtiMistake,
-                ApplyRegionMistake
+                ApplyRegionMistake,
+                ApplyZodiacMistake
             };
         }
 
@@ -49,7 +50,7 @@ namespace App.Scripts.Game.Profile
             if (demandParameter.GetBackground() == "気にしない" && MistakeIds.Contains(4)) MistakeIds.Remove(4);
             if (demandParameter.GetMbti() == "気にしない" && MistakeIds.Contains(5)) MistakeIds.Remove(5);
             if (demandParameter.GetRegion() == "気にしない" && MistakeIds.Contains(6)) MistakeIds.Remove(6);
-            if (demandParameter.GetAge() == "気にしない" && MistakeIds.Contains(2)) MistakeIds.Remove(7);
+
 
             // 気にしないになっていない項目と重複しないmistakeIdを生成
             List<int> mistakeIdList = MistakeIds.ToList();
@@ -336,6 +337,34 @@ namespace App.Scripts.Game.Profile
                 profileParameter.GetZodiac(),
                 profileParameter.GetMbti(),
                 newRegion // 新しい地域を設定
+            );
+        }
+
+        private _ProfileParameter ApplyZodiacMistake(_DemandParameter demandParameter, _ProfileParameter profileParameter)
+        {
+            // 現在の干支を取得
+            string currentZodiac = profileParameter.GetZodiac();
+            string[] zodiacs = { "子年", "丑年", "寅年", "卯年", "辰年", "巳年", "午年", "未年", "申年", "酉年", "戌年", "亥年" };
+
+            // 現在の干支以外をリスト化
+            List<string> otherZodiacs = new List<string>(zodiacs);
+            otherZodiacs.Remove(currentZodiac);
+
+            // ランダムに間違った干支を選択
+            System.Random random = new System.Random();
+            string newZodiac = otherZodiacs[random.Next(otherZodiacs.Count)];
+
+            // 新しい干支を設定して返す
+            return new _ProfileParameter(
+                profileParameter.GetImageId(),
+                profileParameter.GetName(),
+                profileParameter.GetGender(),
+                profileParameter.GetBirthdate(),
+                profileParameter.GetAge(),
+                profileParameter.GetBackground(),
+                newZodiac, // 間違った干支を設定
+                profileParameter.GetMbti(),
+                profileParameter.GetRegion()
             );
         }
     }

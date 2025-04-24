@@ -18,6 +18,10 @@ namespace App.Scripts.Game.Documents
         public void GenerateStudentList(_ProfileParameter profileParameter)
         {
             StudentList = new HashSet<string> { profileParameter.GetName() }; // 単一の名前をHashSetに追加
+            if (profileParameter.GetIsBackgroundFraud())
+            {
+                StudentList = new HashSet<string> { }; // 単一の名前をHashSetに追加
+            }
             GraduationSchool = profileParameter.GetBackground();
             GraduationYear = CalculateGraduationYear(profileParameter.GetBirthdate(), GraduationSchool);
             SetSurveyTitle(profileParameter); // 戻り値を期待せず直接呼び出す
