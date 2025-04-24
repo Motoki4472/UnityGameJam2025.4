@@ -48,7 +48,7 @@ namespace App.Scripts.Game.Profile
             //Debug.Log($"MBTI: {MBTI}");
             //Debug.Log($"Region: {Region}");
 
-            return new _ProfileParameter(ImageId, Name, Gender, Birthdate, Age, Background, Zodiac, MBTI, Region);
+            return new _ProfileParameter(ImageId, Name, Gender, Birthdate, Age, Background, Zodiac, MBTI, Region, true, false, false);
         }
 
         private int[] GenerateImageId(int[] ImageId)
