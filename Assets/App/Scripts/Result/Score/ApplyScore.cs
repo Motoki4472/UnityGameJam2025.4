@@ -1,5 +1,6 @@
 using UnityEngine;
 using TMPro;
+using unityroom.Api;
 
 namespace App.Scripts.Result.Score
 {
@@ -22,6 +23,7 @@ namespace App.Scripts.Result.Score
                 {
                     _peakScoreTMP.text = resultData.maxActiveUserNumber.ToString();
                     _finalScoreTMP.text = resultData.finalActiveUserNumber.ToString();
+                    UnityroomApiClient.Instance.SendScore(1, resultData.maxActiveUserNumber, ScoreboardWriteMode.HighScoreDesc);
                 }
                 else
                 {
