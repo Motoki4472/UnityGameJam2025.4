@@ -37,7 +37,8 @@ namespace App.Scripts.Game.Profile
                 3, // 性別
                 4, // 背景
                 5, // MBTI
-                6  // 地域
+                6, // 地域
+                7  // 干支
             };
 
             // "気にしない"になっているパラメータをHashSetに追加
@@ -48,6 +49,7 @@ namespace App.Scripts.Game.Profile
             if (demandParameter.GetBackground() == "気にしない" && MistakeIds.Contains(4)) MistakeIds.Remove(4);
             if (demandParameter.GetMbti() == "気にしない" && MistakeIds.Contains(5)) MistakeIds.Remove(5);
             if (demandParameter.GetRegion() == "気にしない" && MistakeIds.Contains(6)) MistakeIds.Remove(6);
+            if (demandParameter.GetAge() == "気にしない" && MistakeIds.Contains(2)) MistakeIds.Remove(7);
 
             // 気にしないになっていない項目と重複しないmistakeIdを生成
             List<int> mistakeIdList = MistakeIds.ToList();
@@ -55,7 +57,7 @@ namespace App.Scripts.Game.Profile
 
             profileParameter = MistakeFunctions[mistakeId](demandParameter, profileParameter);
             profileParameter.SetIsCorrect(false); // プロフィールが正しくないことを示すフラグを設定
-            //Debug.Log($"Mistake applied: {mistakeId}"); // デバッグ用ログ
+            Debug.Log($"Mistake applied: {mistakeId}"); // デバッグ用ログ
 
 
             //Debug.Log($"偽プロフィール生成結果:");
@@ -87,6 +89,7 @@ namespace App.Scripts.Game.Profile
             else
             {
                 newAppearance = PhotoEffectMistake(profileParameter);
+                profileParameter.SetIsPhotoEffect(true); // PhotoEffectを適用
             }
 
             return new _ProfileParameter(
