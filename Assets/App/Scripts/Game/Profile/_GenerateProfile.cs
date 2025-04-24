@@ -144,7 +144,8 @@ namespace App.Scripts.Game.Profile
             }
 
             System.DateTime birthdate = new System.DateTime(birthYear, birthMonth, birthDay);
-            if (birthdate > today)
+            System.DateTime comparedate = new System.DateTime(today.Year, birthMonth, birthDay);
+            if (comparedate > today)
             {
                 birthdate = birthdate.AddYears(-1);
 
@@ -152,8 +153,6 @@ namespace App.Scripts.Game.Profile
                 {
                     birthDay = 28; // 2月29日が存在しない場合は28日に調整
                 }
-
-                birthdate = new System.DateTime(birthYear, birthMonth, birthDay);
             }
 
             // 誕生日を文字列として返す（例: "1995-08-15"）
