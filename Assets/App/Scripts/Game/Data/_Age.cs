@@ -8,7 +8,7 @@ namespace App.Scripts.Game.Data
     {
         private Dictionary<string, (int, int)> ageGroups = new Dictionary<string, (int, int)>
         {
-            { "10代", (10, 19) },
+            { "10代", (18, 19) },
             { "20代", (20, 29) },
             { "30代", (30, 39) },
             { "40代", (40, 49) },

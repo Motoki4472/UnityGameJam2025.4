@@ -20,7 +20,7 @@ namespace App.Scripts.Game.Profile
         private bool _isPhotoEffect;
         private bool _isBackgroundFraud;
 
-        public _ProfileParameter(int[] imageId,string name,string gender,string birthdate,string age,string background,string zodiac,string mbti,string region)
+        public _ProfileParameter(int[] imageId,string name,string gender,string birthdate,string age,string background,string zodiac,string mbti,string region,bool isCorrect,bool isPhotoEffect,bool isBackgroundFraud)
         {
             this._imageId = imageId;
             this._name = name;
@@ -31,9 +31,9 @@ namespace App.Scripts.Game.Profile
             this._zodiac = zodiac;
             this._mbti = mbti;
             this._region = region;
-            this._isCorrect = true;
-            this._isPhotoEffect = false;
-            this._isBackgroundFraud = false;
+            this._isCorrect = isCorrect;
+            this._isPhotoEffect = isPhotoEffect;
+            this._isBackgroundFraud = isBackgroundFraud;
         }
 
         public int[] GetImageId()

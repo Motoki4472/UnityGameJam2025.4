@@ -21,7 +21,8 @@ namespace App.Scripts.Game.Profile
                 ApplyGenderMistake,
                 ApplyBackgroundMistake,
                 ApplyMbtiMistake,
-                ApplyRegionMistake
+                ApplyRegionMistake,
+                ApplyZodiacMistake
             };
         }
 
@@ -37,7 +38,8 @@ namespace App.Scripts.Game.Profile
                 3, // 性別
                 4, // 背景
                 5, // MBTI
-                6  // 地域
+                6, // 地域
+                7  // 干支
             };
 
             // "気にしない"になっているパラメータをHashSetに追加
@@ -48,6 +50,8 @@ namespace App.Scripts.Game.Profile
             if (demandParameter.GetBackground() == "気にしない" && MistakeIds.Contains(4)) MistakeIds.Remove(4);
             if (demandParameter.GetMbti() == "気にしない" && MistakeIds.Contains(5)) MistakeIds.Remove(5);
             if (demandParameter.GetRegion() == "気にしない" && MistakeIds.Contains(6)) MistakeIds.Remove(6);
+            if (demandParameter.GetAge() == "気にしない" && MistakeIds.Contains(2)) MistakeIds.Remove(7);
+
 
             // 気にしないになっていない項目と重複しないmistakeIdを生成
             List<int> mistakeIdList = MistakeIds.ToList();
@@ -55,7 +59,7 @@ namespace App.Scripts.Game.Profile
 
             profileParameter = MistakeFunctions[mistakeId](demandParameter, profileParameter);
             profileParameter.SetIsCorrect(false); // プロフィールが正しくないことを示すフラグを設定
-            //Debug.Log($"Mistake applied: {mistakeId}"); // デバッグ用ログ
+            Debug.Log($"Mistake applied: {mistakeId}"); // デバッグ用ログ
 
 
             //Debug.Log($"偽プロフィール生成結果:");
@@ -87,6 +91,7 @@ namespace App.Scripts.Game.Profile
             else
             {
                 newAppearance = PhotoEffectMistake(profileParameter);
+                profileParameter.SetIsPhotoEffect(true); // PhotoEffectを適用
             }
 
             return new _ProfileParameter(
@@ -98,7 +103,10 @@ namespace App.Scripts.Game.Profile
                 profileParameter.GetBackground(),
                 profileParameter.GetZodiac(),
                 profileParameter.GetMbti(),
-                profileParameter.GetRegion()
+                profileParameter.GetRegion(),
+                profileParameter.GetIsCorrect(),
+                profileParameter.GetIsPhotoEffect(),
+                profileParameter.GetIsBackgroundFraud()
             );
         }
 
@@ -155,7 +163,10 @@ namespace App.Scripts.Game.Profile
                 profileParameter.GetBackground(),
                 profileParameter.GetZodiac(),
                 profileParameter.GetMbti(),
-                profileParameter.GetRegion()
+                profileParameter.GetRegion(),
+                profileParameter.GetIsCorrect(),
+                profileParameter.GetIsPhotoEffect(),
+                profileParameter.GetIsBackgroundFraud()
             );
         }
 
@@ -186,7 +197,10 @@ namespace App.Scripts.Game.Profile
                 profileParameter.GetBackground(),
                 profileParameter.GetZodiac(),
                 profileParameter.GetMbti(),
-                profileParameter.GetRegion()
+                profileParameter.GetRegion(),
+                profileParameter.GetIsCorrect(),
+                profileParameter.GetIsPhotoEffect(),
+                profileParameter.GetIsBackgroundFraud()
             );
         }
 
@@ -206,7 +220,10 @@ namespace App.Scripts.Game.Profile
                 profileParameter.GetBackground(),
                 profileParameter.GetZodiac(),
                 profileParameter.GetMbti(),
-                profileParameter.GetRegion()
+                profileParameter.GetRegion(),
+                profileParameter.GetIsCorrect(),
+                profileParameter.GetIsPhotoEffect(),
+                profileParameter.GetIsBackgroundFraud()
             );
         }
 
@@ -224,6 +241,7 @@ namespace App.Scripts.Game.Profile
             {
                 BackGroundFraud(demandParameter, profileParameter);
                 newBackground = profileParameter.GetBackground();
+                profileParameter.SetIsBackgroundFraud(true);
             }
 
 
@@ -236,7 +254,10 @@ namespace App.Scripts.Game.Profile
                 newBackground,
                 profileParameter.GetZodiac(),
                 profileParameter.GetMbti(),
-                profileParameter.GetRegion()
+                profileParameter.GetRegion(),
+                profileParameter.GetIsCorrect(),
+                profileParameter.GetIsPhotoEffect(),
+                profileParameter.GetIsBackgroundFraud()
             );
         }
 
@@ -290,7 +311,10 @@ namespace App.Scripts.Game.Profile
                 profileParameter.GetBackground(),
                 profileParameter.GetZodiac(),
                 newMbti, // 新しいMBTIを設定
-                profileParameter.GetRegion()
+                profileParameter.GetRegion(),
+                profileParameter.GetIsCorrect(),
+                profileParameter.GetIsPhotoEffect(),
+                profileParameter.GetIsBackgroundFraud()
             );
         }
 
@@ -303,12 +327,20 @@ namespace App.Scripts.Game.Profile
 
             // demandParameterのregionを取得し、指定された地域をリスト化
             List<string> excludedRegions = demandParameter.GetRegion().Split(',').Select(r => r.Trim()).ToList();
+            List<string> excludedPrefectures = new List<string>();
+            foreach (string region in excludedRegions)
+            {
+                // 都道府県を取得し、リストに追加
+                List<string> prefectures = _region.GetPrefectures(region);
+                excludedPrefectures.AddRange(prefectures);
+            }
+
 
             // 全ての都道府県を取得
             List<string> allPrefectures = _region.GetAllPrefectures();
 
             // 指定された地域以外の都道府県リストを作成
-            List<string> availablePrefectures = allPrefectures.Where(p => !excludedRegions.Contains(p)).ToList();
+            List<string> availablePrefectures = allPrefectures.Where(p => !excludedPrefectures.Contains(p)).ToList();
 
             string newRegion;
             if (availablePrefectures.Count == 0)
@@ -332,7 +364,41 @@ namespace App.Scripts.Game.Profile
                 profileParameter.GetBackground(),
                 profileParameter.GetZodiac(),
                 profileParameter.GetMbti(),
-                newRegion // 新しい地域を設定
+                newRegion,// 新しい地域を設定
+                profileParameter.GetIsCorrect(),
+                profileParameter.GetIsPhotoEffect(),
+                profileParameter.GetIsBackgroundFraud() 
+            );
+        }
+
+        private _ProfileParameter ApplyZodiacMistake(_DemandParameter demandParameter, _ProfileParameter profileParameter)
+        {
+            // 現在の干支を取得
+            string currentZodiac = profileParameter.GetZodiac();
+            string[] zodiacs = { "子年", "丑年", "寅年", "卯年", "辰年", "巳年", "午年", "未年", "申年", "酉年", "戌年", "亥年" };
+
+            // 現在の干支以外をリスト化
+            List<string> otherZodiacs = new List<string>(zodiacs);
+            otherZodiacs.Remove(currentZodiac);
+
+            // ランダムに間違った干支を選択
+            System.Random random = new System.Random();
+            string newZodiac = otherZodiacs[random.Next(otherZodiacs.Count)];
+
+            // 新しい干支を設定して返す
+            return new _ProfileParameter(
+                profileParameter.GetImageId(),
+                profileParameter.GetName(),
+                profileParameter.GetGender(),
+                profileParameter.GetBirthdate(),
+                profileParameter.GetAge(),
+                profileParameter.GetBackground(),
+                newZodiac, // 間違った干支を設定
+                profileParameter.GetMbti(),
+                profileParameter.GetRegion(),
+                profileParameter.GetIsCorrect(),
+                profileParameter.GetIsPhotoEffect(),
+                profileParameter.GetIsBackgroundFraud()
             );
         }
     }

@@ -18,6 +18,10 @@ namespace App.Scripts.Game.Documents
         public void GenerateStudentList(_ProfileParameter profileParameter)
         {
             StudentList = new HashSet<string> { profileParameter.GetName() }; // 単一の名前をHashSetに追加
+            if (profileParameter.GetIsBackgroundFraud())
+            {
+                StudentList = new HashSet<string> { }; // 単一の名前をHashSetに追加
+            }
             GraduationSchool = profileParameter.GetBackground();
             GraduationYear = CalculateGraduationYear(profileParameter.GetBirthdate(), GraduationSchool);
             SetSurveyTitle(profileParameter); // 戻り値を期待せず直接呼び出す
@@ -113,7 +117,7 @@ namespace App.Scripts.Game.Documents
             List<string> studentArray = StudentList.ToList();
 
             // 最大の名前の幅を取得（全角文字は2、半角文字は1として計算）
-            int maxNameWidth = 14;
+            int maxNameWidth = 16;
 
             // ペアごとにフォーマット
             string formattedList = "";
