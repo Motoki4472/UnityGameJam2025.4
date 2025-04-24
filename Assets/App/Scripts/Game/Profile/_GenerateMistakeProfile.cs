@@ -50,6 +50,7 @@ namespace App.Scripts.Game.Profile
             if (demandParameter.GetBackground() == "気にしない" && MistakeIds.Contains(4)) MistakeIds.Remove(4);
             if (demandParameter.GetMbti() == "気にしない" && MistakeIds.Contains(5)) MistakeIds.Remove(5);
             if (demandParameter.GetRegion() == "気にしない" && MistakeIds.Contains(6)) MistakeIds.Remove(6);
+            if (demandParameter.GetAge() == "気にしない" && MistakeIds.Contains(2)) MistakeIds.Remove(7);
 
 
             // 気にしないになっていない項目と重複しないmistakeIdを生成
@@ -102,7 +103,10 @@ namespace App.Scripts.Game.Profile
                 profileParameter.GetBackground(),
                 profileParameter.GetZodiac(),
                 profileParameter.GetMbti(),
-                profileParameter.GetRegion()
+                profileParameter.GetRegion(),
+                profileParameter.GetIsCorrect(),
+                profileParameter.GetIsPhotoEffect(),
+                profileParameter.GetIsBackgroundFraud()
             );
         }
 
@@ -159,7 +163,10 @@ namespace App.Scripts.Game.Profile
                 profileParameter.GetBackground(),
                 profileParameter.GetZodiac(),
                 profileParameter.GetMbti(),
-                profileParameter.GetRegion()
+                profileParameter.GetRegion(),
+                profileParameter.GetIsCorrect(),
+                profileParameter.GetIsPhotoEffect(),
+                profileParameter.GetIsBackgroundFraud()
             );
         }
 
@@ -190,7 +197,10 @@ namespace App.Scripts.Game.Profile
                 profileParameter.GetBackground(),
                 profileParameter.GetZodiac(),
                 profileParameter.GetMbti(),
-                profileParameter.GetRegion()
+                profileParameter.GetRegion(),
+                profileParameter.GetIsCorrect(),
+                profileParameter.GetIsPhotoEffect(),
+                profileParameter.GetIsBackgroundFraud()
             );
         }
 
@@ -210,7 +220,10 @@ namespace App.Scripts.Game.Profile
                 profileParameter.GetBackground(),
                 profileParameter.GetZodiac(),
                 profileParameter.GetMbti(),
-                profileParameter.GetRegion()
+                profileParameter.GetRegion(),
+                profileParameter.GetIsCorrect(),
+                profileParameter.GetIsPhotoEffect(),
+                profileParameter.GetIsBackgroundFraud()
             );
         }
 
@@ -228,6 +241,7 @@ namespace App.Scripts.Game.Profile
             {
                 BackGroundFraud(demandParameter, profileParameter);
                 newBackground = profileParameter.GetBackground();
+                profileParameter.SetIsBackgroundFraud(true);
             }
 
 
@@ -240,7 +254,10 @@ namespace App.Scripts.Game.Profile
                 newBackground,
                 profileParameter.GetZodiac(),
                 profileParameter.GetMbti(),
-                profileParameter.GetRegion()
+                profileParameter.GetRegion(),
+                profileParameter.GetIsCorrect(),
+                profileParameter.GetIsPhotoEffect(),
+                profileParameter.GetIsBackgroundFraud()
             );
         }
 
@@ -294,7 +311,10 @@ namespace App.Scripts.Game.Profile
                 profileParameter.GetBackground(),
                 profileParameter.GetZodiac(),
                 newMbti, // 新しいMBTIを設定
-                profileParameter.GetRegion()
+                profileParameter.GetRegion(),
+                profileParameter.GetIsCorrect(),
+                profileParameter.GetIsPhotoEffect(),
+                profileParameter.GetIsBackgroundFraud()
             );
         }
 
@@ -336,7 +356,10 @@ namespace App.Scripts.Game.Profile
                 profileParameter.GetBackground(),
                 profileParameter.GetZodiac(),
                 profileParameter.GetMbti(),
-                newRegion // 新しい地域を設定
+                newRegion,// 新しい地域を設定
+                profileParameter.GetIsCorrect(),
+                profileParameter.GetIsPhotoEffect(),
+                profileParameter.GetIsBackgroundFraud() 
             );
         }
 
@@ -364,7 +387,10 @@ namespace App.Scripts.Game.Profile
                 profileParameter.GetBackground(),
                 newZodiac, // 間違った干支を設定
                 profileParameter.GetMbti(),
-                profileParameter.GetRegion()
+                profileParameter.GetRegion(),
+                profileParameter.GetIsCorrect(),
+                profileParameter.GetIsPhotoEffect(),
+                profileParameter.GetIsBackgroundFraud()
             );
         }
     }
