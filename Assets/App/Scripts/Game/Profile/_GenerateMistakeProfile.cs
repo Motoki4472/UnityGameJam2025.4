@@ -327,12 +327,20 @@ namespace App.Scripts.Game.Profile
 
             // demandParameterのregionを取得し、指定された地域をリスト化
             List<string> excludedRegions = demandParameter.GetRegion().Split(',').Select(r => r.Trim()).ToList();
+            List<string> excludedPrefectures = new List<string>();
+            foreach (string region in excludedRegions)
+            {
+                // 都道府県を取得し、リストに追加
+                List<string> prefectures = _region.GetPrefectures(region);
+                excludedPrefectures.AddRange(prefectures);
+            }
+
 
             // 全ての都道府県を取得
             List<string> allPrefectures = _region.GetAllPrefectures();
 
             // 指定された地域以外の都道府県リストを作成
-            List<string> availablePrefectures = allPrefectures.Where(p => !excludedRegions.Contains(p)).ToList();
+            List<string> availablePrefectures = allPrefectures.Where(p => !excludedPrefectures.Contains(p)).ToList();
 
             string newRegion;
             if (availablePrefectures.Count == 0)
